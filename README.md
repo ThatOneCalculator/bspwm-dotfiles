@@ -20,7 +20,7 @@ cd bspwm-dotfiles
 - Icons: [Zafiro](https://github.com/zayronxio/Zafiro-icons)
 - File managers: GUI: [Nemo](https://github.com/linuxmint/nemo); TUI: [Ranger](https://github.com/linuxmint/nemo)
 - WM: [bspwm](https://github.com/baskerville/bspwm)
-- Browser: Firefox/LibreWolf + [Pywalfox](https://github.com/frewacom/pywalfox) + [SimplerentFox (One line)](https://github.com/MiguelRAvila/SimplerentFox/blob/master/Linux/userChrome__OneLine.css)
+- Browsers: Firefox/[LibreWolf](https://librewolf-community.gitlab.io/) + [Pywalfox](https://github.com/frewacom/pywalfox) + [SimplerentFox (One line)](https://github.com/MiguelRAvila/SimplerentFox/blob/master/Linux/userChrome__OneLine.css), [Surf](https://github.com/muennich/sxiv)
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
 - Font: [FiraCode Nerd Font](https://www.nerdfonts.com/)
 - Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
@@ -31,4 +31,5 @@ cd bspwm-dotfiles
 - Audio visulizer: [cava](https://github.com/karlstav/cava)
 - Wallpaper: [from the collection of my photos](https://github.com/rose-pine/wallpapers)
 - Bar: [polybar](https://github.com/polybar/polybar)
+- Image viewer: [sxiv](https://github.com/muennich/sxiv)
 - Life: none
