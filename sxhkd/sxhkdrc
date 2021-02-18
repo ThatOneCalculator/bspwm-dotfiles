@@ -236,9 +236,9 @@ super + alt + p
 super + c
 	kitty -e cava
 
-# Emojis
-super + e
-	emojione-picker
+# Zathura
+super + z
+	zathura
 
 # Farge
 super + alt + c
