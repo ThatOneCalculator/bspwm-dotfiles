@@ -1,6 +1,8 @@
 # bspwm-dotfiles
 There's no place like ~/
 
+All wallpapers photographed by me.
+
 - OS: Arch GNU/Linux
 - Monitor size: 27"
 - Shell: ZSH
