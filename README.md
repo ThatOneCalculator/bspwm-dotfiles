@@ -23,5 +23,5 @@ All wallpapers photographed by me.
 - Discord: [Lightcord](https://lightcord.github.io/) + [Pywal-Discord](https://github.com/FilipLitwora/pywal-discord)
 - Audio visulizer: [cava](https://github.com/karlstav/cava)
 - Wallpaper: [from the collection of my photos](https://github.com/rose-pine/wallpapers)
-- Bar: [polybar](https://github.com/polybar/polybar) (git version)
+- Bar: [polybar](https://github.com/polybar/polybar)
 - Life: none
