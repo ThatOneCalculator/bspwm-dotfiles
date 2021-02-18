@@ -15,7 +15,7 @@ All wallpapers photographed by me.
 - Browser: Firefox/LibreWolf + [Pywalfox](https://github.com/frewacom/pywalfox) + [SimplerentFox (One line)](https://github.com/MiguelRAvila/SimplerentFox/blob/master/Linux/userChrome__OneLine.css)
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
 - Font: [FiraCode Nerd Font](https://www.nerdfonts.com/)
-- Term: [Kitty](https://github.com/kovidgoyal/kitty)
+- Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
 - PDF Viewer: [Zathura](https://pwmt.org/projects/zathura/) + [Zathura-Pywal](https://github.com/GideonWolfe/Zathura-Pywal)
 - Spotify: [Spotify-TUI](https://github.com/Rigellute/spotify-tui) + [spotifyd](https://github.com/Spotifyd/spotifyd)
 - Fetch: [NerdFetch](https://github.com/thatonecalculator/nerdfetch)
