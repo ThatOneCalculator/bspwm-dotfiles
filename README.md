@@ -8,6 +8,7 @@ All wallpapers photographed by me.
 - Shell: ZSH
 - DB: X11
 - DM: [ly](https://github.com/nullgemm/ly)
+- Editor: [micro](https://micro-editor.github.io/)
 - ZSH Prompt: [Spaceship](https://denysdovhan.com/spaceship-prompt/)
 - Icons: [Zafiro](https://github.com/zayronxio/Zafiro-icons)
 - File managers: GUI: [Nemo](https://github.com/linuxmint/nemo); TUI: [Ranger](https://github.com/linuxmint/nemo)
