@@ -17,7 +17,7 @@ cd bspwm-dotfiles
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
 - DM: [ly](https://github.com/nullgemm/ly)
 - Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
-- Editor: [micro](https://micro-editor.github.io/)
+- Editor: [micro](https://micro-editor.github.io/) + aspell, filemanager, fzf, manipulator, misspell, quoter, snippets, autoclose, comment, diff, linter, literate, status
 - Shell: [Zsh](https://www.zsh.org/)
 - ZSH Prompt: [Spaceship](https://denysdovhan.com/spaceship-prompt/)
 - Icons: [Zafiro](https://github.com/zayronxio/Zafiro-icons)
