@@ -1,0 +1,28 @@
+#!/bin/bash
+
+TEMP=`getopt --long -o "p:b:" "$@"`
+eval set -- "$TEMP"
+back="colorz"
+light=""
+while true ; do
+    case "$1" in
+        -p )
+            pic=$2
+            shift 2
+        ;;
+        -b )
+            back=$2
+            shift 2
+        ;;
+        *)
+            break
+        ;;
+    esac 
+done;
+
+wal -i $pic --backend $back 
+
+killall dunst
+dunst -conf .config/dunst/dunstrc &
+pywal-discord
+pywalfox update

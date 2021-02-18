@@ -1,0 +1,5 @@
+#!/bin/bash
+
+walset -p $HOME/Pictures/wallpapers_new/flower.jpg -b colorz
+sleep 0.1
+nitrogen --restore 

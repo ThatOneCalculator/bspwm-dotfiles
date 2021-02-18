@@ -1,0 +1,5 @@
+[output]
+;method = noncurses
+
+[general]
+framerate = 144

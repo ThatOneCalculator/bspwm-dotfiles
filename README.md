@@ -19,6 +19,7 @@ All wallpapers photographed by me.
 - PDF Viewer: [Zathura](https://pwmt.org/projects/zathura/) + [Zathura-Pywal](https://github.com/GideonWolfe/Zathura-Pywal)
 - Spotify: [Spotify-TUI](https://github.com/Rigellute/spotify-tui) + [spotifyd](https://github.com/Spotifyd/spotifyd)
 - Fetch: [NerdFetch](https://github.com/thatonecalculator/nerdfetch)
+- Discord: [Lightcord](https://lightcord.github.io/) + [Pywal-Discord](https://github.com/FilipLitwora/pywal-discord)
 - Audio visulizer: [cava](https://github.com/karlstav/cava)
 - Wallpaper: [from the collection of my photos](https://github.com/rose-pine/wallpapers)
 - Bar: [polybar](https://github.com/polybar/polybar) (git version)

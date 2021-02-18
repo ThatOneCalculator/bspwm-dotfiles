@@ -1,0 +1,12 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Alt-a": "lua:snippets.Accept",
+    "Alt-d": "lua:snippets.Cancel",
+    "Alt-s": "lua:snippets.Insert",
+    "Alt-w": "lua:snippets.Next",
+    "CtrlUnderscore": "lua:comment.comment",
+    "Tab": "Autocomplete|IndentSelection|InsertTab",
+    "Ctrl-w": "Save,Quit",
+    "Ctrl-Alt-z": "VSplit",
+    "Ctrl-Alt-x": "HSplit"
+}

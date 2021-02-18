@@ -1,0 +1,247 @@
+##---------- Keybindings for bspwm ----------##
+
+# Terminal (kitty)
+super + Return
+	kitty
+	
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+super + slash
+	sh ~/.config/rofi/bin/launcher_text
+Menu
+	sh ~/.config/rofi/bin/launcher_text
+alt + F1
+	sh ~/.config/rofi/bin/launcher_text
+
+# Rofi Menus
+super + {q,m,x,r}
+	sh ~/.config/bspwm/rofi/bin/{windows,powermenu,asroot}
+
+ctrl + alt + {s,n,t}
+	sh ~/.config/bspwm/rofi/bin/{screenshot,network,themes}
+
+##---------- System ----------##
+
+# Reload sxhkdrc
+super + shift + r
+    pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+
+# Scrot
+super + Print
+	scrot -e 'xclip -selection clipboard -t image/png -i $f' -o $HOME/scrot-full.png; notify-send "scrot" "Fullscreen taken" -i $HOME/scrot-full.png
+
+# Scrot window
+shift + Print
+	scrot -b -e 'xclip -selection clipboard -t image/png -i $f' -f -u -o $HOME/scrot-window.png; notify-send "scrot" "Window taken" -i $HOME/scrot-window.png
+
+# Scrot selection
+@Print
+	scrot -b -e 'xclip -selection clipboard -t image/png -i $f' -s -f -o $HOME/scrot.png; notify-send "scrot" "Selection taken" -i $HOME/scrot.png
+	
+XF86AudioMute
+	amixer -q -D pulse sset Master toggle
+	
+# Music control
+XF86Audio{Next,Prev,Play}
+	playerctl {next,previous,play-pause}
+
+# Volume wheel
+XF86Audio{RaiseVolume,LowerVolume}
+	amixer -q -D pulse sset Master 5%{-,+}
+
+# Volume manual
+super + shift + {minus,equal}
+	amixer -q -D pulse sset Master 5%{-,+}
+
+##---------- Bspwm ----------##
+
+# Suspend
+ctrl + alt + l
+    systemctl suspend
+
+# Quit/Restart bspwm
+ctrl + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Close App
+super + w
+	bspc node -c
+
+# kill
+alt + F4
+    xkill
+
+# Fullscreen or Monocle
+super + f
+	bspc desktop -l next
+	
+# Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled}
+
+# Pseudo Tiled & tiled mode
+super + {p,t}
+    bspc node -t {pseudo_tiled,tiled}
+
+# Set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+# Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# Switch to last opened workspace
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+# Send focused window to another workspace
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
+
+# Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+# Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Hide/Unhide Window
+super + comma
+	winmask		
+
+
+## -------- Walset ------ ##
+
+ctrl + alt + 1
+	waldef
+
+ctrl + super + alt + 1
+	walsetlight -p $HOME/Pictures/wallpapers_new/flower.jpg -b colorthief
+	
+ctrl + alt + 2
+	walset -p $HOME/Pictures/wallpapers_new/field.jpg -b colorthief
+
+ctrl + super + alt + 2
+	walsetlight -p $HOME/Pictures/wallpapers_new/field.jpg -b colorthief
+
+ctrl + alt + 3
+	walset -p $HOME/Pictures/wallpapers_new/pointoverhead.jpg 
+
+ctrl + super + alt + 3
+	walsetlight -p $HOME/Pictures/wallpapers_new/pointoverhead.jpg
+	
+ctrl + alt + 4
+	walset -p $HOME/Pictures/wallpapers_new/street.jpg -b colorthief
+
+ctrl + super + alt + 4
+	walsetlight -p $HOME/Pictures/wallpapers_new/street.jpg -b colorthief
+
+ctrl + alt + 5
+	walset -p $HOME/Pictures/pine_walls/seaslug.jpg -b wal
+
+ctrl + super + alt + 5
+	walsetlight -p $HOME/Pictures/pine_walls/seaslug.jpg -b wal
+
+ctrl + alt + 6
+	walset -p $HOME/Pictures/wallpapers_new/tinyflowers.jpg -b wal
+
+ctrl + super + alt + 6
+	walsetlight -p $HOME/Pictures/wallpapers_new/tinyflowers.jpg -b wal
+
+ctrl + alt + 7
+	walset -p $HOME/Pictures/wallpapers_new/vans.jpg -b colorthief
+
+ctrl + super + alt + 7
+	walsetlight -p $HOME/Pictures/wallpapers_new/vans.jpg -b colorthief
+
+ctrl + alt + 8
+	walset -p $HOME/Pictures/wallpapers_new/wall.jpg -b colorthief
+
+ctrl + super + alt + 8
+	walsetlight -p $HOME/Pictures/wallpapers_new/wall.jpg -b colorthief
+
+ctrl + alt + 9
+	walset -p $HOME/Pictures/wallpapers_new/foggy.jpg 
+
+ctrl + super + alt + 9
+	walsetlight -p $HOME/Pictures/wallpapers_new/foggy.jpg 
+
+ctrl + alt + 0
+	walset -p $HOME/Pictures/wallpapers_new/tree.jpg -b colorthief
+
+ctrl + super + alt + 0
+	walsetlight -p $HOME/Pictures/wallpapers_new/tree.jpg -b colorthief
+	
+## -------- APPS ------ ##
+
+# Furry shit
+super + alt + t
+	telegram-desktop
+
+# Dictionary
+super + alt + q
+	quick-lookup
+
+# Lightcord
+super + alt + d
+	lightcord; drpc
+
+ctrl + super + alt +d
+	drpc & disown; notify-send "Drpc started" 
+
+# Files
+super + alt + f
+	nemo
+
+# Firefox
+super + b
+	firefox
+
+# Lutris
+super + alt + l
+	gamehub
+
+# Micro 
+super + alt + m
+	kitty -e 'micro'
+
+# Pavucontrol
+super + alt + p
+	pavucontrol
+
+# Cava in kitty
+super + c
+	kitty -e cava
+
+# Emojis
+super + e
+	emojione-picker
+
+# Farge
+super + alt + c
+	farge --notify --expire-time 5000
+
+##---------- EOF ----------##
