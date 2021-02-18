@@ -13,7 +13,7 @@ cd bspwm-dotfiles
 - OS: Arch GNU/Linux
 - Monitor size: 27"
 - Shell: [Zsh](https://www.zsh.org/)
-- DB: X11
+- DB: [X11](https://x.org/)
 - DM: [ly](https://github.com/nullgemm/ly)
 - Editor: [micro](https://micro-editor.github.io/)
 - ZSH Prompt: [Spaceship](https://denysdovhan.com/spaceship-prompt/)
