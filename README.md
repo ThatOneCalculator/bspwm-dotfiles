@@ -3,7 +3,12 @@ There's no place like ~/
 
 All wallpapers photographed by me.
 
-Just `./install.sh`.
+Just 
+```sh
+git clone https://github.com/ThatOneCalculator/bspwm-dotfiles
+cd bspwm-dotfiles
+./install.sh
+```
 
 - OS: Arch GNU/Linux
 - Monitor size: 27"
