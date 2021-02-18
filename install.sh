@@ -12,3 +12,5 @@ cp -r ./sxhkd $HOME/.config/
 cp ./picom.conf $HOME/.config/
 cp -r ./oh-my-zsh $HOME/
 cp ./.zshrc $HOME/
+
+echo "Reminder to self to add in git clones for other stuff idk"
