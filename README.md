@@ -12,7 +12,7 @@ cd bspwm-dotfiles
 
 - OS: Arch GNU/Linux
 - Monitor size: 27"
-- Shell: ZSH
+- Shell: [Zsh](https://www.zsh.org/)
 - DB: X11
 - DM: [ly](https://github.com/nullgemm/ly)
 - Editor: [micro](https://micro-editor.github.io/)
