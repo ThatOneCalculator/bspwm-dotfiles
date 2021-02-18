@@ -3,6 +3,8 @@ There's no place like ~/
 
 All wallpapers photographed by me.
 
+Just `./install.sh`.
+
 - OS: Arch GNU/Linux
 - Monitor size: 27"
 - Shell: ZSH
