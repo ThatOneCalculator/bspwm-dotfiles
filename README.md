@@ -22,3 +22,4 @@ All wallpapers photographed by me.
 - Audio visulizer: [cava](https://github.com/karlstav/cava)
 - Wallpaper: [from the collection of my photos](https://github.com/rose-pine/wallpapers)
 - Bar: [polybar](https://github.com/polybar/polybar) (git version)
+- Life: none
