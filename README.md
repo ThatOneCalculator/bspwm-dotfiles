@@ -17,11 +17,11 @@ cd bspwm-dotfiles
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
 - DM: ~~ly~~ stock LightDM + GTK Greeter
 - Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
-- Editor: [micro](https://micro-editor.github.io/) + aspell, filemanager, fzf, manipulator, misspell, quoter, snippets, autoclose, comment, diff, linter, literate, status
+- Editor: TUI: [micro](https://micro-editor.github.io/) + aspell, filemanager, fzf, manipulator, misspell, quoter, snippets, autoclose, comment, diff, linter, literate, status; GUI: [Typora](https://typora.io/) + Typora-Pywal (repo soon!)
 - Shell: [Zsh](https://www.zsh.org/)
 - ZSH Prompt: [Spaceship](https://denysdovhan.com/spaceship-prompt/)
 - Icons: [Zafiro](https://github.com/zayronxio/Zafiro-icons)
-- File managers: GUI: [Nemo](https://github.com/linuxmint/nemo); TUI: [Ranger](https://github.com/linuxmint/nemo)
+- File managers: TUI: [Ranger](https://github.com/linuxmint/nemo); GUI: [Nemo](https://github.com/linuxmint/nemo)
 - Browsers: Firefox/[LibreWolf](https://librewolf-community.gitlab.io/) + [Pywalfox](https://github.com/frewacom/pywalfox) + [SimplerentFox (One line)](https://github.com/MiguelRAvila/SimplerentFox/blob/master/Linux/userChrome__OneLine.css), [Surf](https://github.com/muennich/sxiv)
 - Font: [FiraCode Nerd Font](https://www.nerdfonts.com/)
 - PDF Viewer: [Zathura](https://pwmt.org/projects/zathura/) + [Zathura-Pywal](https://github.com/GideonWolfe/Zathura-Pywal)
