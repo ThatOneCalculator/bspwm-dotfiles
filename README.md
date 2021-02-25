@@ -15,7 +15,7 @@ cd bspwm-dotfiles
 - WM: [bspwm](https://github.com/baskerville/bspwm)
 - DB: [X11](https://x.org/)
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
-- DM: [ly](https://github.com/nullgemm/ly)
+- DM: ~~ly~~ stock LightDM + GTK Greeter
 - Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
 - Editor: [micro](https://micro-editor.github.io/) + aspell, filemanager, fzf, manipulator, misspell, quoter, snippets, autoclose, comment, diff, linter, literate, status
 - Shell: [Zsh](https://www.zsh.org/)
