@@ -1,0 +1,674 @@
+{
+	"Default Discord bot main.py file": {
+		"prefix": ["dpy.index", "dpy.main", "dpy.bot", "dpy.client"],
+		"body": [
+			"import discord",
+            "from discord.ext import commands",
+            "import json",
+            "",
+            "# Get configuration.json",
+            "with open(\"configuration.json\", \"r\") as config:", 
+            "\tdata = json.load(config)",
+            "\ttoken = data[\"token\"]",
+            "\tprefix = data[\"prefix\"]",
+            "",
+            "",
+            "class Greetings(commands.Cog):",
+            "\tdef __init__(self, bot:commands.Bot):",
+            "\t\tself.bot = bot",
+            "\t\tself._last_member = None",
+            "",
+            "# Intents",
+            "intents = discord.Intents.default()",
+            "intents.members = True",
+            "",
+            "bot = commands.Bot(prefix, intents = intents)",
+            "",
+            "# Load cogs",
+            "initial_extensions = [",
+            "\t\"Cogs.help\",",
+            "\t\"Cogs.ping\"",
+            "]",
+            "",
+            "print(initial_extensions)",
+            "",
+            "if __name__ == '__main__':",
+            "\tfor extension in initial_extensions:",
+            "\t\ttry:",
+            "\t\t\tbot.load_extension(extension)",
+            "\t\texcept Exception as e:",
+            "\t\t\tprint(f\"Failed to load extension {extension}\")",
+            "",
+            "@bot.event",
+            "async def on_ready():",
+            "\tprint(f\"We have logged in as {bot.user}\")",
+            "\tawait bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name =f\"{bot.command_prefix}help\"))",
+            "\tprint(discord.__version__)",
+            "",
+            "bot.run(token)"
+		],
+        "description": "Create a basic Discord bot main.py file."
+    },
+
+    "Default Discord bot cog": {
+		"prefix": "dpy.cog",
+		"body": [
+			"import discord",
+            "from discord.ext import commands",
+            "",
+            "",
+            "class ${1:CogName}(commands.Cog):",
+            "\tdef __init__(self, bot:commands.Bot):",
+            "\t\tself.bot = bot",
+            "",    
+            "",        
+            "\t@commands.command(name = \"${2:commandName}\",",
+            "\t\t\t\t\tusage=\"${3:<usage>}\",",
+            "\t\t\t\t\tdescription = \"${4:description}\")",
+            "\t@commands.guild_only()",
+            "\t@commands.has_permissions()",
+            "\t@commands.cooldown(1, ${5:2}, commands.BucketType.member)",
+            "\tasync def ${6:commandName}(self, ctx:commands.Context):",
+            "\t\t${7:await ctx.send(\"template command\")}",
+            "",
+            "",
+            "def setup(bot:commands.Bot):",
+            "\tbot.add_cog(${1:CogName}(bot))"
+		],
+        "description": "Create a basic Discord cog."
+    },
+
+    "Default Discord bot command": {
+		"prefix": ["dpy.cmd", "dpy.command"],
+		"body": [
+            "@commands.command(name = \"${1:commandName}\", aliases=[\"${2:aliase}\"])",
+            "async def  ${3:commandName}(self, ctx:commands.Context):",
+            "\t${4:await ctx.send(\"template command\")}"
+		],
+        "description": "Create a basic Discord command."
+    },
+
+    "Complex Discord bot command": {
+		"prefix": ["dpy.cmd+", "dpy.command+"],
+		"body": [
+            "@commands.command(name = \"${1:commandName}\",",
+            "\t\t\t\taliases=[\"${2:aliase}\"],",
+            "\t\t\t\tusage=\"${3:<usage>}\",",
+            "\t\t\t\tdescription = \"${4:description}\")",
+            "@commands.guild_only($5)",
+            "@commands.has_permissions($6)",
+            "@commands.bot_has_permissions($7)",
+            "@commands.cooldown(1, ${8:2}, commands.BucketType.member)",
+            "async def ${9:commandName}(self, ctx:commands.Context):",
+            "\t${10:await ctx.send(\"template command\")}"
+		],
+        "description": "Create a complex Discord command."
+    },
+
+    "Default Discord bot embed": {
+		"prefix": "dpy.embed",
+		"body": [
+            "embed=discord.Embed(title=\"${1:title}\", description=\"${2:description}\", color=${3:0xff0000})",
+            "embed.add_field(name=\"${4:field}\", value=\"${5:value}\", inline=${6:False})",
+            "await ctx.send(embed=embed)"
+		],
+        "description": "Create a basic Discord embed."
+    },
+
+    "Complex Discord bot embed": {
+		"prefix": "dpy.embed+",
+		"body": [
+            "embed=discord.Embed(title=\"${1:title}\", description=\"${2:description}\", color=${3:0xff0000})",
+            "embed.set_author(name=\"${4:name}\", url=\"${5:url}\", icon_url=\"${6:icon}\")",
+            "embed.set_thumbnail(url=\"${7:thumbnail}\")",
+            "embed.add_field(name=\"${8:field}\", value=\"${9:value}\", inline=${10:False})",
+            "embed.set_footer(text=\"${11:footer}\")",
+            "await ctx.send(embed=embed)"
+		],
+        "description": "Create a complex Discord embed."
+    },
+
+    "Default Discord bot on_connect": {
+		"prefix": "dpy.onConnect",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_connect(self):"
+		],
+        "description": "Create a default Discord bot on_connect."
+    },
+
+    "Default Discord bot on_disconnect": {
+		"prefix": "dpy.onDisconnect",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_disconnect(self):"
+		],
+        "description": "Create a default Discord bot on_disconnect."
+    },
+
+    "Default Discord bot on_shard_connect": {
+		"prefix": "dpy.onShardConnect",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_shard_connect(self, shard_id:int):"
+		],
+        "description": "Create a default Discord bot on_shard_connect."
+    },
+
+    "Default Discord bot on_shard_disconnect": {
+		"prefix": "dpy.onShardDisconnect",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_shard_disconnect(self, shard_id:int):"
+		],
+        "description": "Create a default Discord bot on_shard_disconnect."
+    },
+
+    "Default Discord bot on_ready": {
+		"prefix": "dpy.onReady",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_ready(self):"
+		],
+        "description": "Create a default Discord bot on_ready."
+    },
+
+    "Default Discord bot on_shard_ready": {
+		"prefix": "dpy.onShardReady",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_shard_ready(self, shard_id:int):"
+		],
+        "description": "Create a default Discord bot on_shard_ready."
+    },
+
+    "Default Discord bot on_resumed": {
+		"prefix": "dpy.onResumed",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_resumed(self):"
+		],
+        "description": "Create a default Discord bot on_resumed."
+    },
+
+    "Default Discord bot on_shard_resumed": {
+		"prefix": "dpy.onShardResumed",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_shard_resumed(self, shard_id:int):"
+		],
+        "description": "Create a default Discord bot on_shard_resumed."
+    },
+
+    "Default Discord bot on_error": {
+		"prefix": "dpy.onError",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_error(self, event:str, *args, **kwargs):"
+		],
+        "description": "Create a default Discord bot on_error."
+    },
+
+    "Default Discord bot on_socket_raw_receive": {
+		"prefix": "dpy.onSocketRawReceive",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_socket_raw_receive(self, msg:msg:str|bytes):"
+		],
+        "description": "Create a default Discord bot on_socket_raw_receive."
+    },
+
+    "Default Discord bot on_socket_raw_send": {
+		"prefix": "dpy.onSocketRawSend",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_socket_raw_send(self, payload:str|bytes):"
+		],
+        "description": "Create a default Discord bot on_socket_raw_send."
+    },
+
+    "Default Discord bot on_typing": {
+		"prefix": "dpy.onTyping",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_typing(self,",
+            "    channel:discord.abc.Messageable,",
+            "    user:discord.Member|discord.User,",
+            "    when:datetime.datetime):"
+		],
+        "description": "Create a default Discord bot on_typing."
+    },
+
+    "Default Discord bot on_message": {
+		"prefix": "dpy.onMessage",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_message(self, message:discord.Message):"
+		],
+        "description": "Create a default Discord bot on_message."
+    },
+
+    "Default Discord bot on_message_delete": {
+		"prefix": "dpy.onMessageDelete",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_message_delete(self, message:discord.Message):"
+		],
+        "description": "Create a default Discord bot on_message_delete."
+    },
+
+    "Default Discord bot on_bulk_message_delete": {
+		"prefix": "dpy.onBulkMessageDelete",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_bulk_message_delete(self, messages:list):"
+		],
+        "description": "Create a default Discord bot on_bulk_message_delete."
+    },
+
+    "Default Discord bot on_raw_bulk_message_delete": {
+		"prefix": "dpy.onRawBulkMessageDelete",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_raw_bulk_message_delete(self, payload:discord.RawBulkMessageDeleteEvent):"
+		],
+        "description": "Create a default Discord bot on_raw_bulk_message_delete."
+    },
+
+    "Default Discord bot on_raw_message_delete": {
+		"prefix": "dpy.onRawMessageDelete",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_raw_message_delete(self, payload:discord.RawBulkMessageDeleteEvent):"
+		],
+        "description": "Create a default Discord bot on_raw_message_delete."
+    },
+
+    "Default Discord bot on_message_edit": {
+		"prefix": "dpy.onMessageEdit",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_message_edit(self, before:discord.Message, after:discord.Message):"
+		],
+        "description": "Create a default Discord bot on_message_edit."
+    },
+
+    "Default Discord bot on_raw_message_edit": {
+		"prefix": "dpy.onRawMessageEdit",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_raw_message_edit(self, payload:discord.RawMessageUpdateEvent):"
+		],
+        "description": "Create a default Discord bot on_raw_message_edit."
+    },
+
+    "Default Discord bot on_reaction_add": {
+		"prefix": "dpy.onReactionAdd",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_reaction_add(self, reaction:discord.Reaction, user:discord.Member|discord.User):"
+		],
+        "description": "Create a default Discord bot on_reaction_add."
+    },
+
+    "Default Discord bot on_raw_reaction_add": {
+		"prefix": "dpy.onRawReactionAdd",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_raw_reaction_add(self, payload:discord.RawReactionActionEvent):"
+		],
+        "description": "Create a default Discord bot on_raw_reaction_add."
+    },
+
+    "Default Discord bot on_reaction_remove": {
+		"prefix": "dpy.onReactionRemove",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_reaction_remove(self, reaction:discord.Reaction, user:discord.Member|discord.User):"
+		],
+        "description": "Create a default Discord bot on_reaction_remove."
+    },
+
+    "Default Discord bot on_raw_reaction_remove": {
+		"prefix": "dpy.onRawReactionRemove",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_raw_reaction_remove(self, payload:discord.RawReactionActionEvent):"
+		],
+        "description": "Create a default Discord bot on_raw_reaction_remove."
+    },
+
+    "Default Discord bot on_reaction_clear": {
+		"prefix": "dpy.onReactionClear",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_reaction_clear(self, message:discord.Message, reactions:list):"
+		],
+        "description": "Create a default Discord bot on_reaction_clear."
+    },
+
+    "Default Discord bot on_raw_reaction_clear": {
+		"prefix": "dpy.onRawReactionClear",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_raw_reaction_clear(self, payload:discord.RawReactionClearEvent):"
+		],
+        "description": "Create a default Discord bot on_raw_reaction_clear."
+    },
+
+    "Default Discord bot on_reaction_clear_emoji": {
+		"prefix": "dpy.onReactionClearEmoji",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_reaction_clear_emoji(self, reaction:discord.Reaction):"
+		],
+        "description": "Create a default Discord bot on_reaction_clear_emoji."
+    },
+
+    "Default Discord bot on_raw_reaction_clear_emoji": {
+		"prefix": "dpy.onRawReactionClearEmoji",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_raw_reaction_clear_emoji(self, payload:discord.RawReactionClearEvent):"
+		],
+        "description": "Create a default Discord bot on_raw_reaction_clear_emoji."
+    },
+
+    "Default Discord bot on_private_channel_delete": {
+		"prefix": "dpy.onPrivateChannelDelete",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_private_channel_delete(self, channel:discord.abc.PrivateChannel):"
+		],
+        "description": "Create a default Discord bot on_private_channel_delete."
+    },
+
+    "Default Discord bot on_private_channel_create": {
+		"prefix": "dpy.onPrivateChannelCreate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_private_channel_create(self, channel:discord.abc.PrivateChannel):"
+		],
+        "description": "Create a default Discord bot on_private_channel_create."
+    },
+
+    "Default Discord bot on_private_channel_update": {
+		"prefix": "dpy.onPrivateChannelUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_private_channel_update(self, before:discord.GroupChannel, after:discord.GroupChannel):"
+		],
+        "description": "Create a default Discord bot on_private_channel_update."
+    },
+
+    "Default Discord bot on_private_channel_pins_update": {
+		"prefix": "dpy.onPrivateChannelPinsUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_private_channel_pins_update(self, channel:discord.abc.PrivateChannel, last_pin:datetime.datetime):"
+		],
+        "description": "Create a default Discord bot on_private_channel_pins_update."
+    },
+
+    "Default Discord bot on_guild_channel_delete": {
+		"prefix": "dpy.onGuildChannelDelete",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_channel_delete(self, channel:discord.abc.GuildChannel):"
+		],
+        "description": "Create a default Discord bot on_guild_channel_delete."
+    },
+
+    "Default Discord bot on_guild_channel_create": {
+		"prefix": "dpy.onGuildChannelCreate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_channel_create(self, channel:discord.abc.GuildChannel):"
+		],
+        "description": "Create a default Discord bot on_guild_channel_create."
+    },
+
+    "Default Discord bot on_guild_channel_update": {
+		"prefix": "dpy.onGuildChannelUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_channel_update(self, before:discord.abc.GuildChannel, after:discord.abc.GuildChannel):"
+		],
+        "description": "Create a default Discord bot on_guild_channel_update."
+    },
+
+    "Default Discord bot on_guild_channel_pins_update": {
+		"prefix": "dpy.onGuildChannelPinsUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_channel_pins_update(self, channel:discord.abc.GuildChannel, last_pin:datetime.datetime):"
+		],
+        "description": "Create a default Discord bot on_guild_channel_pins_update."
+    },
+
+    "Default Discord bot on_guild_integrations_update": {
+		"prefix": "dpy.onGuildIntegrationsUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_integrations_update(self, guild:discord.Guild):"
+		],
+        "description": "Create a default Discord bot on_guild_integrations_update."
+    },
+
+    "Default Discord bot on_webhooks_update": {
+		"prefix": "dpy.onWebhooksUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_webhooks_update(self, channel:discord.abc.GuildChannel):"
+		],
+        "description": "Create a default Discord bot on_webhooks_update."
+    },
+
+    "Default Discord bot on_member_join": {
+		"prefix": "dpy.onMemberJoin",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_member_join(self, member:discord.Member):"
+		],
+        "description": "Create a default Discord bot on_member_join."
+    },
+
+    "Default Discord bot on_member_remove": {
+		"prefix": "dpy.onMemberRemove",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_member_remove(self, member:discord.Member):"
+		],
+        "description": "Create a default Discord bot on_member_remove."
+    },
+
+    "Default Discord bot on_member_update": {
+		"prefix": "dpy.onMemberUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_member_update(self, before:discord.Member, after:discord.Member):"
+		],
+        "description": "Create a default Discord bot on_member_update."
+    },
+
+    "Default Discord bot on_user_update": {
+		"prefix": "dpy.onUserUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_user_update(self, before:discord.User, after:discord.User):"
+		],
+        "description": "Create a default Discord bot on_user_update."
+    },
+
+    "Default Discord bot on_guild_join": {
+		"prefix": "dpy.onGuildJoin",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_join(self, guild:discord.Guild):"
+		],
+        "description": "Create a default Discord bot on_guild_join."
+    },
+
+    "Default Discord bot on_guild_remove": {
+		"prefix": "dpy.onGuildRemove",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_remove(self, guild:discord.Guild):"
+		],
+        "description": "Create a default Discord bot on_guild_remove."
+    },
+
+    "Default Discord bot on_guild_update": {
+		"prefix": "dpy.onGuildUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_update(self, before:discord.Guild, after:discord.Guild):"
+		],
+        "description": "Create a default Discord bot on_guild_update."
+    },
+
+    "Default Discord bot on_guild_role_create": {
+		"prefix": "dpy.onGuildRoleCreate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_role_create(self, role:discord.Role):"
+		],
+        "description": "Create a default Discord bot on_guild_role_create."
+    },
+
+    "Default Discord bot on_guild_role_delete": {
+		"prefix": "dpy.onGuildRoleDelete",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_role_delete(self, role:discord.Role):"
+		],
+        "description": "Create a default Discord bot on_guild_role_delete."
+    },
+
+    "Default Discord bot on_guild_role_update": {
+		"prefix": "dpy.onGuildRoleUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_role_update(self, before:discord.Role, after:discord.Role):"
+		],
+        "description": "Create a default Discord bot on_guild_role_update."
+    },
+
+    "Default Discord bot on_guild_emojis_update": {
+		"prefix": "dpy.onGuildEmojisUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_emojis_update(self, guild:discord.Guild, before, after):"
+		],
+        "description": "Create a default Discord bot on_guild_emojis_update."
+    },
+
+    "Default Discord bot on_guild_available": {
+		"prefix": "dpy.onGuildAvailable",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_available(self, guild:discord.Guild):"
+		],
+        "description": "Create a default Discord bot on_guild_available."
+    },
+
+    "Default Discord bot on_guild_unavailable": {
+		"prefix": "dpy.onGuildUnavailable",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_guild_unavailable(self, guild:discord.Guild):"
+		],
+        "description": "Create a default Discord bot on_guild_unavailable."
+    },
+
+    "Default Discord bot on_voice_state_update": {
+		"prefix": "dpy.onVoiceStateUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_voice_state_update(self, member:discord.Member, before:discord.VoiceState, after:discord.VoiceState):"
+		],
+        "description": "Create a default Discord bot on_voice_state_update."
+    },
+
+    "Default Discord bot on_member_ban": {
+		"prefix": "dpy.onMemberBan",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_member_ban(self, guild:discord.Guild, user:discord.User):"
+		],
+        "description": "Create a default Discord bot on_member_ban."
+    },
+
+    "Default Discord bot on_member_unban": {
+		"prefix": "dpy.onMemberUnban",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_member_unban(self, guild:discord.Guild, user:discord.User):"
+		],
+        "description": "Create a default Discord bot on_member_unban."
+    },
+
+    "Default Discord bot on_invite_create": {
+		"prefix": "dpy.onInviteCreate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_invite_create(self, invite:discord.Invite):"
+		],
+        "description": "Create a default Discord bot on_invite_create."
+    },
+
+    "Default Discord bot on_invite_delete": {
+		"prefix": "dpy.onInviteDelete",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_invite_delete(self, invite:discord.Invite):"
+		],
+        "description": "Create a default Discord bot on_invite_delete."
+    },
+
+    "Default Discord bot on_group_join": {
+		"prefix": "dpy.onGroupJoin",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_group_join(self, channel:discord.GroupChannel, user:discord.User):"
+		],
+        "description": "Create a default Discord bot on_group_join."
+    },
+    
+    "Default Discord bot on_group_remove": {
+		"prefix": "dpy.onGroupRemove",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_group_remove(self, channel:discord.GroupChannel, user:discord.User):"
+		],
+        "description": "Create a default Discord bot on_group_remove."
+    },
+
+    "Default Discord bot on_relationship_add": {
+		"prefix": "dpy.onRelationshipAdd",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_relationship_add(self, relationship:discord.Relationship):"
+		],
+        "description": "Create a default Discord bot on_relationship_add."
+    },
+
+    "Default Discord bot on_relationship_remove": {
+		"prefix": "dpy.onRelationshipRemove",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_relationship_remove(self, relationship:discord.Relationship):"
+		],
+        "description": "Create a default Discord bot on_relationship_remove."
+    },
+
+    "Default Discord bot on_relationship_update": {
+		"prefix": "dpy.onRelationshipUpdate",
+		"body": [
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_relationship_update(self, before:discord.Relationship, after:discord.Relationship):"
+		],
+        "description": "Create a default Discord bot on_relationship_update."
+    },
+
+}

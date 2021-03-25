@@ -1,0 +1,1 @@
+{"version":3,"file":"listener.d.ts","sourceRoot":"","sources":["../src/listener.ts"],"names":[],"mappings":"AAAA,OAAO,EACN,UAAU,EASV,MAAM,QAAQ,CAAC;AAEhB,OAAO,KAAK,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AAG3C,qBAAa,QAAS,YAAW,UAAU;IAGvB,OAAO,CAAC,QAAQ;IAFnC,OAAO,CAAC,WAAW,CAAoB;gBAEZ,QAAQ,EAAE,QAAQ;IAEtC,MAAM;IAgCN,OAAO;CAGd"}

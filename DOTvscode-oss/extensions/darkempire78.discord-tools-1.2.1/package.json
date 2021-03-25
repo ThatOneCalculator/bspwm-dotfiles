@@ -1,0 +1,116 @@
+{
+	"name": "discord-tools",
+	"displayName": "Discord Tools",
+	"description": "Enable you to generate and complete your Discord code faster.",
+	"icon": "images/logo.png",
+	"version": "1.2.1",
+	"publisher": "Darkempire78",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Darkempire78/Discord-Tools"
+	},
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"keywords": [
+		"discord",
+		"discord bot",
+		"discord.py",
+		"discord.js",
+		"jda",
+		"eris"
+	],
+	"categories": [
+		"Other",
+		"Snippets"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "discord-tools.pyBotTemplate",
+				"title": "Generate a python template bot (Discord.py)"
+			},
+			{
+				"command": "discord-tools.jsBotTemplate",
+				"title": "Generate a javascript template bot (Discord.js)"
+			},
+			{
+				"command": "discord-tools.openDiscordDoc",
+				"title": "Open the Discord bot Documention"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "discord-tools.openDiscordDoc",
+				"key": "ctrl+alt+d",
+				"mac": "shift+cmd+d"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "discord-tools.pyBotTemplate",
+					"when": "workspaceFolderCount > 0"
+				},
+				{
+					"command": "discord-tools.jsBotTemplate",
+					"when": "workspaceFolderCount > 0"
+				},
+				{
+					"command": "discord-tools.openDiscordDoc",
+					"when": "workspaceFolderCount > 0"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"language": "python",
+				"path": "./snippets/pySnippets.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/jsSnippets.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/erisSnippets.code-snippets"
+			},
+			{
+				"language": "java",
+				"path": "./snippets/javaSnippets.code-snippets"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.52.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.15.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	},
+	"galleryBanner": {
+		"color": "#6477C1",
+		"theme": "dark"
+	},
+	"dependencies": {
+		"fs-extra": "^9.0.1"
+	},
+	"__metadata": {
+		"id": "b7ae608d-676a-47df-b0fe-59602c6b2ab4",
+		"publisherId": "9fd2cbe3-fdd9-421d-8bf8-d10454096380",
+		"publisherDisplayName": "Darkempire"
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"publisher": "nico-castell",
+	"name": "linux-desktop-file",
+	"repository": {
+		"url": "https://github.com/nico-castell/desktop-file-support"
+	},
+	"displayName": "Linux Desktop File support",
+	"description": "Add support for .desktop files in linux",
+	"icon": "assets/extension_icon.png",
+	"version": "0.0.14",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "desktop",
+				"aliases": [
+					"Desktop",
+					"desktop"
+				],
+				"firstLine": "^\\[Desktop Entry\\]",
+				"extensions": [
+					".desktop"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "desktop",
+				"scopeName": "source.desktop",
+				"path": "./syntaxes/desktop.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "desktop",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "1895bcfc-fdd4-4263-ade3-4aa598a21fda",
+		"publisherId": "649d2304-cde5-42ca-b949-be064632bd2e",
+		"publisherDisplayName": "Nico Castell"
+	}
+}

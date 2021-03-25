@@ -1,0 +1,3 @@
+#!/bin/sh
+
+scp $HOME/.cache/wal/colors.css your@server:/var/www/html/style/colors.css

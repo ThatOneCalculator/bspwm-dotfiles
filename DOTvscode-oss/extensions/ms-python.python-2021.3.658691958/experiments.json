@@ -1,0 +1,38 @@
+[
+    {
+        "name": "ShowExtensionSurveyPrompt - enabled",
+        "salt": "ShowExtensionSurveyPrompt",
+        "max": 100,
+        "min": 60
+    },
+    {
+        "name": "ShowExtensionSurveyPrompt - control",
+        "salt": "ShowExtensionSurveyPrompt",
+        "min": 0,
+        "max": 40
+    },
+    {
+        "name": "CollectLSRequestTiming - experiment",
+        "salt": "CollectLSRequestTiming",
+        "min": 0,
+        "max": 10
+    },
+    {
+        "name": "CollectLSRequestTiming - control",
+        "salt": "CollectLSRequestTiming",
+        "min": 10,
+        "max": 100
+    },
+    {
+        "name": "DeprecatePythonPath - experiment",
+        "salt": "DeprecatePythonPath",
+        "min": 0,
+        "max": 20
+    },
+    {
+        "name": "DeprecatePythonPath - control",
+        "salt": "DeprecatePythonPath",
+        "min": 80,
+        "max": 100
+    }
+]

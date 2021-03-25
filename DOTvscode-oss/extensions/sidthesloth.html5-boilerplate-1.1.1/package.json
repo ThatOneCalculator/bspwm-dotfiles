@@ -1,0 +1,64 @@
+{
+	"name": "html5-boilerplate",
+	"displayName": "HTML Boilerplate",
+	"publisher": "sidthesloth",
+	"description": "A basic HTML5 boilerplate snippet generator.",
+	"version": "1.1.1",
+	"license": "MIT",
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#505050",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^0.10.x"
+	},
+	"homepage": "https://github.com/sidthesloth92/vsc_html5_boilerplate/blob/master/README.md",
+	"bugs": {
+		"url": "https://github.com/sidthesloth92/vsc_html5_boilerplate/issues",
+		"email": "sidthesloth92@hotmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sidthesloth92/vsc_html5_boilerplate.git"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"html",
+		"html5",
+		"snippet",
+		"snippets",
+		"boilerplate"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "html",
+				"path": "./snippets/html.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/html.json"
+			},
+			{
+				"language": "ruby",
+				"path": "./snippets/html.json"
+			},
+			{
+				"language": "njk",
+				"path": "./snippets/html.json"
+			},
+			{
+				"language": "django-html",
+				"path": "./snippets/html.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "f45dc69c-8d62-4ea1-b01f-3ab90854acb6",
+		"publisherId": "c9dc0ce4-2cc9-440f-a476-fad4af6f223d",
+		"publisherDisplayName": "sidthesloth"
+	}
+}

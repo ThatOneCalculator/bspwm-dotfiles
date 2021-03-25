@@ -1,0 +1,46 @@
+{
+	"name": "markdown-checkbox",
+	"version": "0.1.3",
+	"displayName": "Markdown Checkboxes",
+	"description": "Adds checkbox support to the built-in markdown preview",
+	"keywords": [
+		"markdown",
+		"checkbox",
+		"checkboxes",
+		"github",
+		"task list",
+		"multi-root ready"
+	],
+	"icon": "logo/logox128.png",
+	"publisher": "bierner",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/mjbvz/vscode-markdown-checkboxes.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mjbvz/vscode-markdown-checkboxes/issues"
+	},
+	"engines": {
+		"vscode": "^1.15.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"contributes": {
+		"markdown.markdownItPlugins": true,
+		"markdown.previewStyles": [
+			"checkboxes.css"
+		]
+	},
+	"main": "./index.js",
+	"scripts": {},
+	"dependencies": {
+		"markdown-it-task-lists": "^2.0.0"
+	},
+	"__metadata": {
+		"id": "b0db4123-c5d9-4f45-bd2e-70738ebbb304",
+		"publisherId": "f164f116-e2aa-496b-84dc-2451248e8beb",
+		"publisherDisplayName": "Matt Bierner"
+	}
+}
