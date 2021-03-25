@@ -15,19 +15,19 @@ cd bspwm-dotfiles
 - WM: [bspwm](https://github.com/baskerville/bspwm)
 - DB: [X11](https://x.org/)
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
-- DM: ~~ly~~ stock LightDM + GTK Greeter
+- DM: LightDM Webkit Aether
 - Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
-- Editor: TUI: [micro](https://micro-editor.github.io/) + aspell, filemanager, fzf, manipulator, misspell, quoter, snippets, autoclose, comment, diff, linter, literate, status; GUI: [Typora](https://typora.io/) + Typora-Pywal (repo soon!)
+- Editor: TUI: [micro](https://micro-editor.github.io/) + aspell, filemanager, fzf, manipulator, misspell, quoter, snippets, autoclose, comment, diff, linter, literate, status; GUI: [Typora](https://typora.io/) + Typora-Pywal (repo soon!), VSCodium + VSCode Pywal
 - Shell: [Zsh](https://www.zsh.org/)
 - ZSH Prompt: [Spaceship](https://denysdovhan.com/spaceship-prompt/)
 - Icons: [Zafiro](https://github.com/zayronxio/Zafiro-icons)
 - File managers: TUI: [Ranger](https://github.com/linuxmint/nemo); GUI: [Nemo](https://github.com/linuxmint/nemo)
 - Browsers: Firefox/[LibreWolf](https://librewolf-community.gitlab.io/) + [Pywalfox](https://github.com/frewacom/pywalfox) + [SimplerentFox (One line)](https://github.com/MiguelRAvila/SimplerentFox/blob/master/Linux/userChrome__OneLine.css)
-- Font: [FiraCode Nerd Font](https://www.nerdfonts.com/)
+- Font: [Cartograph CF](https://connary.com/cartograph.html) \[100% not here trust me it's totally not in .local/share/fonts :^)\]
 - PDF Viewer: [Zathura](https://pwmt.org/projects/zathura/) + [Zathura-Pywal](https://github.com/GideonWolfe/Zathura-Pywal)
 - Spotify: [Spotify-TUI](https://github.com/Rigellute/spotify-tui) + [spotifyd](https://github.com/Spotifyd/spotifyd)
 - Fetch: [NerdFetch](https://github.com/thatonecalculator/nerdfetch)
-- Discord: [Lightcord](https://lightcord.github.io/) + [Pywal-Discord](https://github.com/FilipLitwora/pywal-discord)
+- Discord: [Powercord](https://powercord.dev/) + [Pywal-Discord](https://github.com/FilipLitwora/pywal-discord)
 - Audio visulizer: [cava](https://github.com/karlstav/cava)
 - Wallpapers: [from the collection of my photos](https://github.com/rose-pine/wallpapers)
 - Bar: [polybar](https://github.com/polybar/polybar)
