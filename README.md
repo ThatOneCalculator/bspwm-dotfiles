@@ -23,7 +23,7 @@ cd bspwm-dotfiles
 - Icons: [Zafiro](https://github.com/zayronxio/Zafiro-icons)
 - File managers: TUI: [Ranger](https://github.com/linuxmint/nemo); GUI: [Nemo](https://github.com/linuxmint/nemo)
 - Browsers: Firefox/[LibreWolf](https://librewolf-community.gitlab.io/) + [Pywalfox](https://github.com/frewacom/pywalfox) + [SimplerentFox (One line)](https://github.com/MiguelRAvila/SimplerentFox/blob/master/Linux/userChrome__OneLine.css)
-- Font: [Cartograph CF](https://connary.com/cartograph.html) \[100% not here trust me it's totally not in .local/share/fonts :^)\]
+- Font: [Cartograph CF](https://connary.com/cartograph.html) \[100% not here trust me it's totally not in fonts :^)\]
 - PDF Viewer: [Zathura](https://pwmt.org/projects/zathura/) + [Zathura-Pywal](https://github.com/GideonWolfe/Zathura-Pywal)
 - Spotify: [Spotify-TUI](https://github.com/Rigellute/spotify-tui) + [spotifyd](https://github.com/Spotifyd/spotifyd)
 - Fetch: [NerdFetch](https://github.com/thatonecalculator/nerdfetch)
