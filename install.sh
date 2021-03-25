@@ -10,6 +10,8 @@ cp -r ./polybar $HOME/.config/
 cp -r ./ranger $HOME/.config/
 cp -r ./sxhkd $HOME/.config/
 cp -r ./vscode-oss $HOME/.vscode-oss
+mkdir $HOME/.themes
+cp -r ./flowers $HOME/.themes/flowers
 cp ./picom.conf $HOME/.config/
 cp ./zshrc $HOME/.zshrc
 
