@@ -1,0 +1,41 @@
+{
+	"name": "github-markdown-preview",
+	"private": true,
+	"version": "0.0.2",
+	"displayName": "Github Markdown Preview",
+	"description": "Changes VS Code's built-in markdown preview to match Github",
+	"keywords": [
+		"markdown",
+		"style",
+		"github",
+		"github markdown",
+		"gfm"
+	],
+	"icon": "logo/logox128.png",
+	"publisher": "bierner",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/mjbvz/vscode-github-markdown-preview.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mjbvz/vscode-github-markdown-preview/issues"
+	},
+	"engines": {
+		"vscode": "^1.28.0"
+	},
+	"categories": [
+		"Other",
+		"Extension Packs"
+	],
+	"extensionPack": [
+		"bierner.markdown-preview-github-styles",
+		"bierner.markdown-emoji",
+		"bierner.markdown-checkbox",
+		"bierner.markdown-yaml-preamble"
+	],
+	"__metadata": {
+		"id": "9f5a5fc9-8b23-4484-85c4-1438b82d8634",
+		"publisherId": "f164f116-e2aa-496b-84dc-2451248e8beb",
+		"publisherDisplayName": "Matt Bierner"
+	}
+}

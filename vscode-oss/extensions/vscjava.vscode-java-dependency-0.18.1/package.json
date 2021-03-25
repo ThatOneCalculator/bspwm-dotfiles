@@ -1,0 +1,617 @@
+{
+	"name": "vscode-java-dependency",
+	"displayName": "Project Manager for Java",
+	"description": "%description%",
+	"version": "0.18.1",
+	"publisher": "vscjava",
+	"preview": true,
+	"aiKey": "AIF-d9b70cd4-b9f9-4d70-929b-a071c400b217",
+	"keywords": [
+		"java",
+		"project",
+		"explorer"
+	],
+	"engines": {
+		"vscode": "^1.53.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-java-dependency.git"
+	},
+	"homepage": "https://github.com/Microsoft/vscode-java-dependency/blob/master/README.md",
+	"icon": "logo.png",
+	"activationEvents": [
+		"onCommand:_java.project.open",
+		"onCommand:java.project.create",
+		"onCommand:java.view.package.exportJar",
+		"onCommand:java.view.package.revealInProjectExplorer",
+		"onView:javaProjectExplorer"
+	],
+	"license": "MIT",
+	"main": "./main.js",
+	"contributes": {
+		"javaExtensions": [
+			"./server/com.microsoft.jdtls.ext.core-0.18.1.jar"
+		],
+		"commands": [
+			{
+				"command": "java.project.create",
+				"title": "%contributes.commands.java.project.create%",
+				"category": "Java",
+				"icon": "$(add)"
+			},
+			{
+				"command": "java.project.addLibraries",
+				"title": "%contributes.commands.java.project.addLibraries%",
+				"category": "Java",
+				"icon": "$(add)"
+			},
+			{
+				"command": "java.project.addLibraryFolders",
+				"title": "%contributes.commands.java.project.addLibraryFolders%",
+				"category": "Java",
+				"icon": "$(new-folder)"
+			},
+			{
+				"command": "java.project.removeLibrary",
+				"title": "%contributes.commands.java.project.removeLibrary%",
+				"category": "Java",
+				"icon": "$(remove)"
+			},
+			{
+				"command": "java.project.refreshLibraries",
+				"title": "%contributes.commands.java.view.package.refresh%",
+				"category": "Java",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "java.project.build.workspace",
+				"title": "%contributes.commands.java.project.build.workspace%"
+			},
+			{
+				"command": "java.project.clean.workspace",
+				"title": "%contributes.commands.java.project.clean.workspace%"
+			},
+			{
+				"command": "java.project.update",
+				"title": "%contributes.commands.java.project.update%"
+			},
+			{
+				"command": "java.view.package.revealInProjectExplorer",
+				"title": "%contributes.commands.java.view.package.revealInProjectExplorer%",
+				"category": "Java"
+			},
+			{
+				"command": "java.view.package.refresh",
+				"title": "%contributes.commands.java.view.package.refresh%",
+				"category": "Java",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "java.view.package.changeToHierarchicalPackageView",
+				"title": "%contributes.commands.java.view.package.changeToHierarchicalPackageView%",
+				"category": "Java",
+				"icon": "$(list-tree)"
+			},
+			{
+				"command": "java.view.package.changeToFlatPackageView",
+				"title": "%contributes.commands.java.view.package.changeToFlatPackageView%",
+				"category": "Java",
+				"icon": "$(list-flat)"
+			},
+			{
+				"command": "java.view.package.linkWithFolderExplorer",
+				"title": "%contributes.commands.java.view.package.linkWithFolderExplorer%",
+				"category": "Java",
+				"icon": {
+					"dark": "images/dark/icon-unlink.svg",
+					"light": "images/light/icon-unlink.svg"
+				}
+			},
+			{
+				"command": "java.view.package.unlinkWithFolderExplorer",
+				"title": "%contributes.commands.java.view.package.unlinkWithFolderExplorer%",
+				"category": "Java",
+				"icon": {
+					"dark": "images/dark/icon-link.svg",
+					"light": "images/light/icon-link.svg"
+				}
+			},
+			{
+				"command": "java.view.package.revealFileInOS",
+				"title": "%contributes.commands.java.view.package.revealFileInOS%",
+				"category": "Java"
+			},
+			{
+				"command": "java.view.package.exportJar",
+				"title": "%contributes.commands.java.view.package.exportJar%",
+				"category": "Java",
+				"icon": "$(export)"
+			},
+			{
+				"command": "java.view.package.copyFilePath",
+				"title": "%contributes.commands.java.view.package.copyFilePath%",
+				"category": "Java"
+			},
+			{
+				"command": "java.view.package.copyRelativeFilePath",
+				"title": "%contributes.commands.java.view.package.copyRelativeFilePath%",
+				"category": "Java"
+			},
+			{
+				"command": "java.view.package.newJavaClass",
+				"title": "%contributes.commands.java.view.package.newJavaClass%",
+				"category": "Java",
+				"icon": "$(add)"
+			},
+			{
+				"command": "java.view.package.newPackage",
+				"title": "%contributes.commands.java.view.package.newPackage%",
+				"category": "Java"
+			},
+			{
+				"command": "java.view.package.moveFileToTrash",
+				"title": "%contributes.commands.java.view.package.moveFileToTrash%",
+				"category": "Java"
+			},
+			{
+				"command": "java.view.package.renameFile",
+				"title": "%contributes.commands.java.view.package.renameFile%",
+				"category": "Java"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Java Project Manager",
+			"properties": {
+				"java.dependency.showMembers": {
+					"type": "boolean",
+					"description": "%configuration.java.dependency.showMembers%",
+					"default": false
+				},
+				"java.dependency.syncWithFolderExplorer": {
+					"type": "boolean",
+					"description": "%configuration.java.dependency.syncWithFolderExplorer%",
+					"default": true
+				},
+				"java.dependency.autoRefresh": {
+					"type": "boolean",
+					"description": "%configuration.java.dependency.autoRefresh%",
+					"default": true
+				},
+				"java.dependency.refreshDelay": {
+					"type": "number",
+					"description": "%configuration.java.dependency.refreshDelay%",
+					"default": 2000
+				},
+				"java.dependency.packagePresentation": {
+					"type": "string",
+					"enum": [
+						"flat",
+						"hierarchical"
+					],
+					"description": "%configuration.java.dependency.packagePresentation%",
+					"default": "flat"
+				},
+				"java.project.exportJar.targetPath": {
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": [
+								"${workspaceFolder}/${workspaceFolderBasename}.jar",
+								"askUser",
+								""
+							],
+							"enumDescriptions": [
+								"%configuration.java.project.exportJar.targetPath.workspaceFolder%",
+								"%configuration.java.project.exportJar.targetPath.askUser%",
+								"%configuration.java.project.exportJar.targetPath.askUser%"
+							]
+						},
+						"string"
+					],
+					"markdownDescription": "%configuration.java.project.exportJar.targetPath%",
+					"default": "${workspaceFolder}/${workspaceFolderBasename}.jar"
+				}
+			}
+		},
+		"keybindings": [
+			{
+				"command": "java.view.package.revealFileInOS",
+				"key": "ctrl+alt+r",
+				"win": "shift+alt+r",
+				"mac": "cmd+alt+r",
+				"when": "java:serverMode == Standard && focusedView == javaProjectExplorer"
+			},
+			{
+				"command": "java.view.package.copyFilePath",
+				"key": "ctrl+alt+c",
+				"win": "shift+alt+c",
+				"mac": "cmd+alt+c",
+				"when": "java:serverMode == Standard && focusedView == javaProjectExplorer"
+			},
+			{
+				"command": "java.view.package.copyRelativeFilePath",
+				"key": "ctrl+shift+alt+c",
+				"win": "ctrl+k ctrl+shift+c",
+				"mac": "cmd+shift+alt+c",
+				"when": "java:serverMode == Standard && focusedView == javaProjectExplorer"
+			},
+			{
+				"command": "java.view.package.renameFile",
+				"key": "F2",
+				"mac": "enter",
+				"when": "java:serverMode == Standard && focusedView == javaProjectExplorer"
+			},
+			{
+				"command": "java.view.package.moveFileToTrash",
+				"key": "delete",
+				"mac": "cmd+backspace",
+				"when": "java:serverMode == Standard && focusedView == javaProjectExplorer"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "java.view.package.exportJar",
+					"when": "java:serverMode == Standard"
+				},
+				{
+					"command": "java.view.package.refresh",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.changeToHierarchicalPackageView",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.changeToFlatPackageView",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.linkWithFolderExplorer",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.unlinkWithFolderExplorer",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.revealFileInOS",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.copyFilePath",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.copyRelativeFilePath",
+					"when": "false"
+				},
+				{
+					"command": "java.project.addLibraries",
+					"when": "false"
+				},
+				{
+					"command": "java.project.addLibraryFolders",
+					"when": "false"
+				},
+				{
+					"command": "java.project.removeLibrary",
+					"when": "false"
+				},
+				{
+					"command": "java.project.refreshLibraries",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.newJavaClass",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.newPackage",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.renameFile",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.moveFileToTrash",
+					"when": "false"
+				},
+				{
+					"command": "java.project.build.workspace",
+					"when": "false"
+				},
+				{
+					"command": "java.project.clean.workspace",
+					"when": "false"
+				},
+				{
+					"command": "java.project.update",
+					"when": "false"
+				},
+				{
+					"command": "java.view.package.revealInProjectExplorer",
+					"when": "false"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "java.view.package.revealInProjectExplorer",
+					"when": "resourceFilename in java:supportedBuildFiles && java:serverMode == Standard",
+					"group": "navigation@100"
+				},
+				{
+					"command": "java.view.package.revealInProjectExplorer",
+					"when": "resourceExtname == .java && java:serverMode == Standard",
+					"group": "navigation@100"
+				}
+			],
+			"editor/title/context": [
+				{
+					"command": "java.view.package.revealInProjectExplorer",
+					"when": "resourceFilename in java:supportedBuildFiles && java:serverMode == Standard",
+					"group": "2_files@100"
+				},
+				{
+					"command": "java.view.package.revealInProjectExplorer",
+					"when": "resourceExtname == .java && java:serverMode == Standard",
+					"group": "2_files@100"
+				}
+			],
+			"view/title": [
+				{
+					"command": "java.project.create",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard",
+					"group": "navigation@10"
+				},
+				{
+					"command": "java.view.package.exportJar",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard && !java:noJavaProjects",
+					"group": "navigation@20"
+				},
+				{
+					"command": "java.view.package.refresh",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard && !java:noJavaProjects",
+					"group": "navigation@30"
+				},
+				{
+					"command": "java.view.package.changeToHierarchicalPackageView",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard && config.java.dependency.packagePresentation == flat",
+					"group": "overflow_10@10"
+				},
+				{
+					"command": "java.view.package.changeToFlatPackageView",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard && config.java.dependency.packagePresentation != flat",
+					"group": "overflow_10@10"
+				},
+				{
+					"command": "java.view.package.linkWithFolderExplorer",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard && config.java.dependency.syncWithFolderExplorer != true",
+					"group": "overflow_10@20"
+				},
+				{
+					"command": "java.view.package.unlinkWithFolderExplorer",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard && config.java.dependency.syncWithFolderExplorer == true",
+					"group": "overflow_10@20"
+				},
+				{
+					"command": "java.project.build.workspace",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard && !java:noJavaProjects",
+					"group": "overflow_20@10"
+				},
+				{
+					"command": "java.project.clean.workspace",
+					"when": "view == javaProjectExplorer && java:serverMode == Standard && !java:noJavaProjects",
+					"group": "overflow_20@20"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "java.view.package.revealFileInOS",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(?=.*?\\b\\+uri\\b)/",
+					"group": "6_copypath@10"
+				},
+				{
+					"command": "java.view.package.copyFilePath",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(?=.*?\\b\\+uri\\b)/",
+					"group": "6_copypath@20"
+				},
+				{
+					"command": "java.view.package.copyRelativeFilePath",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(?=.*?\\b\\+uri\\b)/",
+					"group": "6_copypath@25"
+				},
+				{
+					"command": "java.view.package.renameFile",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(package|packageRoot)(?=.*?\\b\\+(source|resource)\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "7_modification@10"
+				},
+				{
+					"command": "java.view.package.renameFile",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(file|type|folder)(?=.*?\\b\\+uri\\b)/",
+					"group": "7_modification@10"
+				},
+				{
+					"command": "java.view.package.moveFileToTrash",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(package|packageRoot)(?=.*?\\b\\+(source|resource)\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "7_modification@20"
+				},
+				{
+					"command": "java.view.package.moveFileToTrash",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(file|type|folder)(?=.*?\\b\\+uri\\b)/",
+					"group": "7_modification@20"
+				},
+				{
+					"command": "java.view.package.newJavaClass",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(package|packageRoot)(?=.*?\\b\\+source\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "1_new@10"
+				},
+				{
+					"command": "java.view.package.newJavaClass",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:project(?=.*?\\b\\+java\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "inline@add_0"
+				},
+				{
+					"command": "java.view.package.newJavaClass",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:project(?=.*?\\b\\+java\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "1_new@10"
+				},
+				{
+					"command": "java.view.package.newJavaClass",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(package|packageRoot)(?=.*?\\b\\+source\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "inline@add_0"
+				},
+				{
+					"command": "java.view.package.newPackage",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:(package|packageRoot)(?=.*?\\b\\+source\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "1_new@20"
+				},
+				{
+					"command": "java.view.package.newPackage",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:project(?=.*?\\b\\+java\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "1_new@20"
+				},
+				{
+					"command": "java.project.addLibraries",
+					"alt": "java.project.addLibraryFolders",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:container(?=.*?\\b\\+referencedLibrary\\b)/",
+					"group": "inline@0"
+				},
+				{
+					"command": "java.project.removeLibrary",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:jar(?=.*?\\b\\+referencedLibrary\\b)(?=.*?\\b\\+uri\\b)/",
+					"group": "inline"
+				},
+				{
+					"command": "java.project.refreshLibraries",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:container(?=.*?\\b\\+referencedLibrary\\b)/",
+					"group": "inline@1"
+				},
+				{
+					"command": "java.view.package.exportJar",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:workspace(?=.*?\\b\\+uri\\b)/ && java:serverMode == Standard",
+					"group": "inline"
+				},
+				{
+					"command": "java.project.update",
+					"when": "view == javaProjectExplorer && viewItem =~ /java:project(?=.*?\\b\\+uri\\b)(?=.*?\\b\\+(maven|gradle)\\b)/",
+					"group": "9_sync@10"
+				}
+			]
+		},
+		"views": {
+			"explorer": [
+				{
+					"id": "javaProjectExplorer",
+					"name": "Java Projects",
+					"when": "java:serverMode",
+					"contextualTitle": "Java Projects",
+					"icon": "$(project)"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "explorer",
+				"contents": "%viewsWelcome.workbench.createNewJavaProject%",
+				"when": "workspaceFolderCount == 0"
+			},
+			{
+				"view": "javaProjectExplorer",
+				"contents": "%viewsWelcome.workbench.noJavaProject%",
+				"when": "java:noJavaProjects"
+			},
+			{
+				"view": "javaProjectExplorer",
+				"contents": "%viewsWelcome.workbench.inLightWeightMode%",
+				"when": "java:serverMode == LightWeight"
+			}
+		],
+		"taskDefinitions": [
+			{
+				"type": "java",
+				"properties": {
+					"label": {
+						"type": "string",
+						"description": "%taskDefinitions.java.project.exportJar.label%"
+					},
+					"mainClass": {
+						"type": "string",
+						"description": "%taskDefinitions.java.project.exportJar.mainClass%"
+					},
+					"targetPath": {
+						"type": "string",
+						"description": "%taskDefinitions.java.project.exportJar.targetPath%"
+					},
+					"elements": {
+						"type": "array",
+						"items": {
+							"anyOf": [
+								{
+									"enum": [
+										"${compileOutput}",
+										"${testCompileOutput}",
+										"${dependencies}",
+										"${testDependencies}"
+									],
+									"enumDescriptions": [
+										"%taskDefinitions.java.project.exportJar.compileOutput%",
+										"%taskDefinitions.java.project.exportJar.testCompileOutput%",
+										"%taskDefinitions.java.project.exportJar.dependencies%",
+										"%taskDefinitions.java.project.exportJar.testDependencies%"
+									]
+								},
+								"string"
+							]
+						},
+						"description": "%taskDefinitions.java.project.exportJar.elements%"
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"compile": "tsc -p . && webpack --config webpack.config.js",
+		"watch": "webpack --mode development --watch --info-verbosity verbose",
+		"test": "tsc -p . && node ./dist/test/index.js",
+		"build-server": "./node_modules/.bin/gulp build_server",
+		"vscode:prepublish": "tsc -p ./ && webpack --mode production"
+	},
+	"devDependencies": {
+		"@types/fs-extra": "^5.1.0",
+		"@types/glob": "^7.1.3",
+		"@types/lodash": "^4.14.165",
+		"@types/minimatch": "^3.0.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^8.10.66",
+		"@types/vscode": "1.53.0",
+		"copy-webpack-plugin": "^6.3.2",
+		"glob": "^7.1.6",
+		"gulp": "^4.0.2",
+		"gulp-copy": "^4.0.1",
+		"gulp-tslint": "^8.1.4",
+		"mocha": "^8.2.1",
+		"ts-loader": "^5.4.5",
+		"tslint": "^5.20.1",
+		"typescript": "^3.9.7",
+		"vscode-test": "^1.4.1",
+		"webpack": "^4.44.2",
+		"webpack-cli": "^3.3.12"
+	},
+	"dependencies": {
+		"fs-extra": "^7.0.1",
+		"globby": "11.0.1",
+		"lodash": "^4.17.20",
+		"minimatch": "^3.0.4",
+		"vscode-extension-telemetry-wrapper": "0.8.0",
+		"vscode-tas-client": "^0.1.17"
+	},
+	"__metadata": {
+		"id": "7865e561-1c83-410e-9b99-aabada597a7e",
+		"publisherId": "bae08b87-578e-41ec-ab1c-0b036e7add88",
+		"publisherDisplayName": "Microsoft"
+	}
+}

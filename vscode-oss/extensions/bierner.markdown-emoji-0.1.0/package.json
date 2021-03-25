@@ -1,0 +1,44 @@
+{
+	"name": "markdown-emoji",
+	"version": "0.1.0",
+	"displayName": "Markdown Emoji",
+	"description": "Adds emoji syntax support to VS Code's built-in markdown preview",
+	"keywords": [
+		"emoji",
+		"markdown",
+		"emoticons",
+		"github",
+		"multi-root ready"
+	],
+	"icon": "logo/logox128.png",
+	"publisher": "bierner",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/mjbvz/vscode-markdown-emoji.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mjbvz/vscode-markdown-emoji/issues"
+	},
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"contributes": {
+		"markdown.markdownItPlugins": true
+	},
+	"main": "./extension.js",
+	"devDependencies": {
+		"@types/vscode": "^1.33.0"
+	},
+	"dependencies": {
+		"markdown-it-emoji": "^2.0.0"
+	},
+	"__metadata": {
+		"id": "f595c9c1-28b5-415e-a55f-2deb4a8c3abd",
+		"publisherId": "f164f116-e2aa-496b-84dc-2451248e8beb",
+		"publisherDisplayName": "Matt Bierner"
+	}
+}

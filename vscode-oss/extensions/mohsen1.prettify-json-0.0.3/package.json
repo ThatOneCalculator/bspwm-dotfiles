@@ -1,0 +1,43 @@
+{
+	"name": "prettify-json",
+	"displayName": "Prettify JSON",
+	"description": "Visual Studio Code Prettify JSON Extension",
+	"version": "0.0.3",
+	"icon": "icon.png",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:mohsen1/vscode-prettify-json.git"
+	},
+	"publisher": "mohsen1",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.prettifyJSON"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.prettifyJSON",
+				"title": "Prettify JSON"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	},
+	"__metadata": {
+		"id": "67e66172-30c7-4478-8f5d-6eac4ae755dc",
+		"publisherId": "114b20ca-e58f-4673-9024-1fe88a3e941a",
+		"publisherDisplayName": "Mohsen Azimi"
+	}
+}
