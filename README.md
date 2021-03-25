@@ -21,7 +21,7 @@ cd bspwm-dotfiles
 - Shell: [Zsh](https://www.zsh.org/) + [oh-my-zsh](https://ohmyz.sh) + [Spaceship prompt](https://github.com/denysdovhan/spaceship-prompt) + plugins: git git-extras zsh-autosuggestions node zsh-syntax-highlighting zsh-completions
 - Icons: [Zafiro](https://github.com/zayronxio/Zafiro-icons)
 - File managers: TUI: [Ranger](https://github.com/linuxmint/nemo); GUI: [Nemo](https://github.com/linuxmint/nemo)
-- Browsers: Firefox/[LibreWolf](https://librewolf-community.gitlab.io/) + [Pywalfox](https://github.com/frewacom/pywalfox) + [SimplerentFox (One line)](https://github.com/MiguelRAvila/SimplerentFox/blob/master/Linux/userChrome__OneLine.css)
+- Browsers: Firefox/[LibreWolf](https://librewolf-community.gitlab.io/) + [Pywalfox](https://github.com/frewacom/pywalfox)
 - Font: [Cartograph CF](https://connary.com/cartograph.html) \[100% not here trust me it's totally not in fonts :^)\]
 - PDF Viewer: [Zathura](https://pwmt.org/projects/zathura/) + [Zathura-Pywal](https://github.com/GideonWolfe/Zathura-Pywal)
 - Spotify: [Spotify-TUI](https://github.com/Rigellute/spotify-tui) + [spotifyd](https://github.com/Spotifyd/spotifyd)
