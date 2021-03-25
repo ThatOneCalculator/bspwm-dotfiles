@@ -31,4 +31,5 @@ cd bspwm-dotfiles
 - Wallpapers: [from the collection of my photos](https://github.com/rose-pine/wallpapers)
 - Bar: [polybar](https://github.com/polybar/polybar)
 - Image viewer: [sxiv](https://github.com/muennich/sxiv)
+- Spotify: [spotifyd](https://github.com/Spotifyd/spotifyd) + [spotify-tui](https://github.com/Rigellute/spotify-tui)
 - Life: none

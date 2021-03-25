@@ -75,7 +75,7 @@ killall -9 sxhkd xsettingsd dunst node python picom bspcomp lxpolkit sp spotifyd
 # Launch daemons and shit
 dunst -conf $HOME/.config/dunst/dunstrc &
 sxhkd
-sp 
+#sp 
 fixjava
 /usr/lib/lxpolkit/lxpolkit &
 light-locker --lock-on-suspend &
