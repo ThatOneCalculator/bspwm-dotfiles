@@ -1,6 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class MdiDataProvider {
-}
-exports.MdiDataProvider = MdiDataProvider;
-//# sourceMappingURL=mdiDataProvider.js.map
