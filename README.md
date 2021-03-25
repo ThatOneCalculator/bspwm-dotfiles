@@ -17,7 +17,7 @@ cd bspwm-dotfiles
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
 - DM: LightDM Webkit Aether
 - Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
-- Editor: TUI: [micro](https://micro-editor.github.io/) + aspell, filemanager, fzf, manipulator, misspell, quoter, snippets, autoclose, comment, diff, linter, literate, status; GUI: [Typora](https://typora.io/) + Typora-Pywal (repo soon!), VSCodium + VSCode Pywal
+- Editor: TUI: [micro](https://micro-editor.github.io/) + aspell, filemanager, fzf, manipulator, misspell, quoter, snippets, autoclose, comment, diff, linter, literate, status; GUI: [Typora](https://typora.io/) + Typora-Pywal (repo soon!), VSCodium + VSCode Pywal + All extensions in vscode-extensions.txt
 - Shell: [Zsh](https://www.zsh.org/)
 - ZSH Prompt: [Spaceship](https://denysdovhan.com/spaceship-prompt/)
 - Icons: [Zafiro](https://github.com/zayronxio/Zafiro-icons)
