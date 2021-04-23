@@ -70,6 +70,7 @@ set -g default-terminal "screen-256color"
 plugins=(git git-extras zsh-autosuggestions node zsh-syntax-highlighting zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.cache/wal/colors.sh
 
 SPACESHIP_PROMPT_ADD_NEWLINE=true
 SPACESHIP_PROMPT_SEPARATE_LINE=false
@@ -122,18 +123,19 @@ alias zshconfig="micro ~/.zshrc; source ~/.zshrc"
 alias clock="tty-clock -Sct"
 alias f="clear; nerdfetch"
 alias y="ytop -I 1/2 -s"
-alias au="yay -Syu"
 alias ra="ranger"
 alias pls="sudo"
 alias of="clear ; onefetch"
 alias ws="f; walset -p"
 alias cv="cava"
 alias cb="colorbars"
-alias u="paru -Syu; paru -c"
+alias u="yay -Syu; yay --clean; npmu"
 alias m="micro"
 alias color="farge --notify --expire-time 5000"
-alias yay="paru"
-alias a="paru"
+#alias yay="paru"
+#alias a="paru"
 alias e="tuimoji"
+alias yt="ytfzf"
+alias sp="ncspot"
 cat ~/.cache/wal/sequences
 f
