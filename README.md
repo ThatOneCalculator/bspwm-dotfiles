@@ -29,7 +29,7 @@ cd bspwm-dotfiles
 - Fetch: [NerdFetch](https://github.com/thatonecalculator/nerdfetch)
 - Discord: [Powercord](https://powercord.dev/) + [Pywal-Discord](https://github.com/FilipLitwora/pywal-discord)
 - Audio visulizer: [cava](https://github.com/karlstav/cava)
-- Wallpapers: [from the collection of my photos](https://github.com/rose-pine/wallpapers)
+- Wallpapers: [from the collection of my photos](https://github.com/rose-pine/wallpapers), OMORI art from OMOCAT and edited by me
 - Bar: [polybar](https://github.com/polybar/polybar)
 - Image viewer: [sxiv](https://github.com/muennich/sxiv)
 - Spotify: [ncspot](https://github.com/hrkfdn/ncspot)
