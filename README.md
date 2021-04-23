@@ -14,6 +14,7 @@ cd bspwm-dotfiles
 - Monitor size: 27"
 - WM: [bspwm](https://github.com/baskerville/bspwm)
 - DB: [X11](https://x.org/)
+- Theming: [pywal](https://github.com/dylanaraps/pywal) + [wpgtk](https://deviantfero.github.io/wpgtk/)
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
 - DM: LightDM Webkit + [Aether](https://github.com/NoiSek/Aether)
 - Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
