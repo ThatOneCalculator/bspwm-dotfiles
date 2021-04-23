@@ -20,7 +20,8 @@ while true ; do
     esac
 done;
 
-wal -i $pic --backend $back 
+wal -i $pic --backend $back
+wpg -s $pic --backend $back
 
 . "${HOME}/.cache/wal/colors.sh"
 bspc config normal_border_color "$color1"
@@ -28,8 +29,8 @@ bspc config active_border_color "$color2"
 bspc config focused_border_color "$color15"
 bspc config presel_feedback_color "$color1"
 
-killall dunst
-dunst -conf .config/dunst/dunstrc &
+killall -9 dunst nemo
+dunst -conf $HOME/.config/dunst/dunstrc &
 pywal-discord
 pywal-typora
 pywalfox update
