@@ -15,6 +15,7 @@ cd bspwm-dotfiles
 - WM: [bspwm](https://github.com/baskerville/bspwm)
 - DB: [X11](https://x.org/)
 - Theming: [pywal](https://github.com/dylanaraps/pywal) + [wpgtk](https://deviantfero.github.io/wpgtk/)
+- GTK theme: [wpgtk](https://deviantfero.github.io/wpgtk/)'s FlatColor theme
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
 - DM: LightDM Webkit + [Aether](https://github.com/NoiSek/Aether)
 - Terminal emulator: [Kitty](https://github.com/kovidgoyal/kitty)
