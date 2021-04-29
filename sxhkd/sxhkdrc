@@ -132,14 +132,19 @@ alt + shift + {Left,Down,Up,Right}
 super + comma
 	winmask		
 
+super + Home
+	bspc config top_padding 150; bspc config bottom_padding 150; bspc config left_padding 150; bspc config right_padding 150
+
+super + End
+	bspc config top_padding 0; bspc config bottom_padding 57; bspc config left_padding 0; bspc config right_padding 0
 
 ## -------- Walset ------ ##
 
 ctrl + alt + 1
-	waldef
+	walset -p $HOME/Pictures/wallpapers_new/tinyflowers.jpg -b wal
 
 ctrl + super + alt + 1
-	walsetlight -p $HOME/Pictures/wallpapers_new/flower.jpg -b colorthief
+	walsetlight -p $HOME/Pictures/wallpapers_new/tinyflowers.jpg -b wal
 	
 ctrl + alt + 2
 	walset -p $HOME/Pictures/wallpapers_new/field.jpg -b colorthief
@@ -166,51 +171,63 @@ ctrl + super + alt + 5
 	walsetlight -p $HOME/Pictures/pine_walls/seaslug.jpg -b wal
 
 ctrl + alt + 6
-	walset -p $HOME/Pictures/wallpapers_new/tinyflowers.jpg -b wal
-
-ctrl + super + alt + 6
-	walsetlight -p $HOME/Pictures/wallpapers_new/tinyflowers.jpg -b wal
-
-ctrl + alt + 7
 	walset -p $HOME/Pictures/wallpapers_new/vans.jpg -b colorthief
 
-ctrl + super + alt + 7
+ctrl + super + alt + 6
 	walsetlight -p $HOME/Pictures/wallpapers_new/vans.jpg -b colorthief
 
-ctrl + alt + 8
+ctrl + alt + 7
 	walset -p $HOME/Pictures/wallpapers_new/wall.jpg -b colorthief
 
-ctrl + super + alt + 8
+ctrl + super + alt + 7
 	walsetlight -p $HOME/Pictures/wallpapers_new/wall.jpg -b colorthief
 
+ctrl + alt + 8
+	walset -p $HOME/Pictures/wallpapers_new/foggy.jpg -b wal 
+
+ctrl + super + alt + 8
+	walsetlight -p $HOME/Pictures/wallpapers_new/foggy.jpg -b wal
+
 ctrl + alt + 9
-	walset -p $HOME/Pictures/wallpapers_new/foggy.jpg 
+	walset -p $HOME/Pictures/wallpapers_new/leaves.jpg -b wal
 
 ctrl + super + alt + 9
-	walsetlight -p $HOME/Pictures/wallpapers_new/foggy.jpg 
+	walsetlight -p $HOME/Pictures/wallpapers_new/leaves.jpg -b wal
 
 ctrl + alt + 0
-	walset -p $HOME/Pictures/wallpapers_new/tree.jpg -b colorthief
+	walset -p $HOME/Pictures/omori/pain.jpg -b colorthief
 
 ctrl + super + alt + 0
-	walsetlight -p $HOME/Pictures/wallpapers_new/tree.jpg -b colorthief
-	
+	walsetlight -p $HOME/Pictures/omori/pain.jpg -b colorthief
+
+ctrl + alt + minus
+	walset -p $HOME/Pictures/omori/merch.jpg
+
+ctrl + super + alt + minus
+	walsetlight -p $HOME/Pictures/omori/merch.jpg
+
+ctrl + alt + equal
+	walset -p $HOME/Pictures/omori/cover.jpg -b wal
+
+ctrl + super + alt + equal
+	walsetlight -p $HOME/Pictures/omori/cover.jpg -b wal
+
 ## -------- APPS ------ ##
 
-# Furry shit
+# Typora
 super + alt + t
-	telegram-desktop
+	typora
 
-# Dictionary
-super + alt + q
-	quick-lookup
+# VSCodium
+super + alt + v
+	vscodium
 
-# Lightcord
+# Discord
 super + alt + d
-	lightcord; drpc
+	discord-canary; killall -9 drpc; drpc
 
 ctrl + super + alt +d
-	drpc & disown; notify-send "Drpc started" 
+	killall -9 drpc; drpc; notify-send "Drpc started" 
 
 # Files
 super + alt + f
@@ -222,7 +239,7 @@ super + b
 
 # Lutris
 super + alt + l
-	gamehub
+	lutris
 
 # Micro 
 super + alt + m
@@ -237,8 +254,8 @@ super + c
 	kitty -e cava
 
 # Zathura
-super + z
-	zathura
+super + alt + z
+	za
 
 # Farge
 super + alt + c
