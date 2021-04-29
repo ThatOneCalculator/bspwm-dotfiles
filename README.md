@@ -1,7 +1,7 @@
 # bspwm-dotfiles
 There's no place like ~/
 
-All wallpapers photographed by me.
+All photo wallpapers photographed by me, all OMORI wallpapers belong to OMOCAT (and were edited by me).
 
 Just 
 ```sh
