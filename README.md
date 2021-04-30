@@ -12,7 +12,7 @@ cd bspwm-dotfiles
 - Monitor size: 27"
 - WM: [bspwm](https://github.com/baskerville/bspwm)
 - Wallpapers: All photo wallpapers photographed by me, all OMORI wallpapers belong to OMOCAT (and were edited by me).
-- DB: [X11](https://x.org/)
+- DP: [Xorg](https://x.org/)
 - Theming: [pywal](https://github.com/dylanaraps/pywal) + [wpgtk](https://deviantfero.github.io/wpgtk/)
 - GTK theme: [wpgtk](https://deviantfero.github.io/wpgtk/)'s FlatColor theme
 - Compositor: [Picom (jonaburg fork)](https://github.com/jonaburg/picom)
