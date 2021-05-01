@@ -11,6 +11,7 @@ cd bspwm-dotfiles
 - OS: Arch GNU/Linux
 - Monitor size: 27"
 - WM: [bspwm](https://github.com/baskerville/bspwm)
+- WM Utils (double borders): [wmutils/core+opt](https://github.com/wmutils/opt)
 - Wallpapers: All photo wallpapers photographed by me, all OMORI wallpapers belong to OMOCAT (and were edited by me).
 - DP: [Xorg](https://x.org/)
 - Theming: [pywal](https://github.com/dylanaraps/pywal) + [wpgtk](https://deviantfero.github.io/wpgtk/)
