@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+#   double borders
+#
+
+. "${HOME}/.cache/wal/colors.sh"
+
+outer=$(echo $background | sed 's/#//') # background
+inner1=$(echo $color7 | sed 's/#//') # focused
+inner2=$(echo $color2 | sed 's/#//') # normal
+
+
+targets() {
+	case $1 in
+		focused) bspc query -N -n .local.focused.\!fullscreen;;
+		normal)  bspc query -N -n .local.\!focused.\!fullscreen;;
+		active) bspc query -N -n .active.\!focused.\!fullscreen
+	esac
+}
+
+draw() { chwb2 -I "$i" -O "$o" -i "3" -o "10" $@ 2> /dev/null; }
+
+# initial draw, and then subscribe to events
+{ echo; bspc subscribe node_geometry node_focus; } |
+	while read -r _; do
+		i=$inner1 o=$outer draw "$(targets focused)"
+		i=$inner2 o=$outer draw "$(targets  normal)"
+		i=$inner2 o=$outer draw "$(targets  active)"		
+	done
