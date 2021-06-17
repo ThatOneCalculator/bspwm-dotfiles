@@ -1,0 +1,10 @@
+#!/bin/bash
+
+running=$(pgrep -x allfloat)
+
+if [[ $running = "" ]]; then
+	allfloat & disown
+else
+	killall -9 allfloat
+	alltile
+fi

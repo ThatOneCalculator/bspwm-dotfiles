@@ -56,7 +56,7 @@ bspc rule -a Audacious state=floating follow=on focus=on
 bspc rule -a Viewnior state=floating follow=on focus=on
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
-bspc rule -a Zathura state=pseudo_tiled
+bspc rule -a Zathura state=tiled
 bspc rule -a Wine state=floating manage=off
 bspc rule -a Surf state=tiled manage=on
 
@@ -67,9 +67,9 @@ killall -9 sxhkd dunst borders
 
 borders &
 
-
 # Launch daemons and shit
 dunst -conf $HOME/.config/dunst/dunstrc &
+#xautolock -time 10 -notify 5 -notifier '/usr/lib/xsecurelock/until_nonidle /usr/lib/xsecurelock/dimmer' -locker xsl &
 sxhkd &
 fixjava
 # light-locker --lock-on-suspend &
@@ -94,7 +94,7 @@ numlockx on
 walset -p $HOME/Pictures/omori/pain.jpg -b colorthief &> /dev/null
 . "${HOME}/.cache/wal/colors.sh"
 
-~/.config/polybar/manhattan/launch.sh &
+$HOME/.config/polybar/manhattan/launch.sh &
 
 startpage & 
 

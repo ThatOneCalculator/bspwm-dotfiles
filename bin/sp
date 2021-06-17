@@ -1,4 +1,0 @@
-#!/bin/sh
-
-killall -9 spotifyd
-spotifyd -u YOUR_USERNAME -p YOUR_PASSWORD -b pulseaudio

@@ -31,10 +31,10 @@ bspc config presel_feedback_color "$color2"
 
 killall -9 xsettingsd borders
 borders &
-xsettingsd -c .xsettingsd &
-razer-cli -a
-pywal-discord
-pywal-typora
-pywalfox update
-bspcomp
-startpage
+xsettingsd -c $HOME/.xsettingsd &
+razer-cli -a &
+pywal-discord &
+pywal-typora &
+pywalfox update &
+startpage &
+bspcomp &
