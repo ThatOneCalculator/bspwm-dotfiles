@@ -1,3 +1,11 @@
+[[ $(fgconsole 2>/dev/null) == 2 ]] && exec startx -- vt2
+#[[ $(fgconsole) == 2 ]] && exec dbus-launch --exit-with-session bspwm
+#if [ $(fgconsole) = 3 ]; then
+# sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
+# xsettingsd &
+# bspcomp &
+# exec dbus-launch --exit-with-session bspwm
+#fi
 export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/.config/rofi/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
@@ -129,7 +137,7 @@ alias of="clear ; onefetch"
 alias ws="f; walset -p"
 alias cv="cava"
 alias cb="colorbars"
-alias u="yay -Syu; yay --clean; npmu"
+alias u="yay -Syu; yay --clean"
 alias m="micro"
 alias color="farge --notify --expire-time 5000"
 #alias yay="paru"
@@ -137,5 +145,8 @@ alias color="farge --notify --expire-time 5000"
 alias e="tuimoji"
 alias yt="ytfzf"
 alias sp="ncspot"
+alias yf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+alias yq="yay -Qeq | fzf --multi --preview 'yay -Qi {1}' | xargs -ro yay -Rnscd"
 cat ~/.cache/wal/sequences
 f
+source /usr/share/nvm/init-nvm.sh

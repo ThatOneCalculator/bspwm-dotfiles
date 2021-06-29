@@ -24,8 +24,7 @@ bspc config active_border_color  "$background"
 bspc config presel_feedback_color "$color2"
 
 ## Configurations -------------------------------#
-bspc monitor DP-2 -d 'I' 'II' 'III' 'IV' 'V'
-bspc monitor DP-0 -d 'VI' 'VII'
+bspc monitor DP-0 -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII'
 
 bspc config border_width 10
 bspc config window_gap 15
@@ -71,7 +70,7 @@ borders &
 dunst -conf $HOME/.config/dunst/dunstrc &
 #xautolock -time 10 -notify 5 -notifier '/usr/lib/xsecurelock/until_nonidle /usr/lib/xsecurelock/dimmer' -locker xsl &
 sxhkd &
-fixjava
+# fixjava
 # light-locker --lock-on-suspend &
 # nm-applet & 
 # openrazer-daemon
@@ -91,10 +90,12 @@ bspcomp
 bspfloat &
 numlockx on
 
-walset -p $HOME/Pictures/omori/pain.jpg -b colorthief &> /dev/null
+#walset -p $HOME/Pictures/omori/pain.jpg -b colorthief &> /dev/null
+walset -p $HOME/Pictures/ghibli/howl.jpg -b wal &
 . "${HOME}/.cache/wal/colors.sh"
 
 $HOME/.config/polybar/manhattan/launch.sh &
+# $HOME/.config/polybar/san/launch.sh &
 
 startpage & 
 

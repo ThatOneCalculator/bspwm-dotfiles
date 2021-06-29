@@ -3,7 +3,7 @@
 # Terminal (kitty)
 super + Return
 	kitty
-	
+ 
 ##---------- Rofi Launcher & Menus ----------##
 
 # Rofi App Launcher
@@ -13,13 +13,6 @@ Menu
 	sh ~/.config/rofi/bin/launcher_text
 alt + F1
 	sh ~/.config/rofi/bin/launcher_text
-
-# Rofi Menus
-super + {q,m,x,r}
-	sh ~/.config/bspwm/rofi/bin/{windows,powermenu,asroot}
-
-ctrl + alt + {s,n,t}
-	sh ~/.config/bspwm/rofi/bin/{screenshot,network,themes}
 
 ##---------- System ----------##
 
@@ -56,8 +49,12 @@ super + shift + {minus,equal}
 
 ##---------- Bspwm ----------##
 
-# Suspend
+# Lock
 ctrl + alt + l
+    xsl
+
+# Lock
+ctrl + alt + s
     systemctl suspend
 
 # Quit/Restart bspwm
@@ -133,11 +130,21 @@ super + comma
 	winmask		
 
 super + Home
-	bspc config top_padding 150; bspc config bottom_padding 150; bspc config left_padding 150; bspc config right_padding 150
+	bspsquish
 
 super + End
-	bspc config top_padding 0; bspc config bottom_padding 57; bspc config left_padding 0; bspc config right_padding 0
+	bspstretch
 
+# bsp-layout
+
+super + z
+	tilecycle
+
+super + x
+	bsp-layout cycle --layouts tall,rtall,wide,rwide
+
+super + c
+	bsp-layout cycle --layouts grid,rgrid,tiled
 ## -------- Walset ------ ##
 
 ctrl + alt + 1
@@ -147,10 +154,10 @@ ctrl + super + alt + 1
 	walsetlight -p $HOME/Pictures/wallpapers_new/tinyflowers.jpg -b wal
 	
 ctrl + alt + 2
-	walset -p $HOME/Pictures/wallpapers_new/field.jpg -b colorthief
+	walset -p $HOME/Pictures/wallpapers_new/field.jpg
 
 ctrl + super + alt + 2
-	walsetlight -p $HOME/Pictures/wallpapers_new/field.jpg -b colorthief
+	walsetlight -p $HOME/Pictures/wallpapers_new/field.jpg
 
 ctrl + alt + 3
 	walset -p $HOME/Pictures/wallpapers_new/pointoverhead.jpg 
@@ -171,10 +178,10 @@ ctrl + super + alt + 5
 	walsetlight -p $HOME/Pictures/pine_walls/seaslug.jpg -b wal
 
 ctrl + alt + 6
-	walset -p $HOME/Pictures/wallpapers_new/vans.jpg -b colorthief
+	walset -p $HOME/Pictures/70s/20210508_0058.jpg
 
 ctrl + super + alt + 6
-	walsetlight -p $HOME/Pictures/wallpapers_new/vans.jpg -b colorthief
+	walsetlight -p $HOME/Pictures/70s/20210508_0058.jpg
 
 ctrl + alt + 7
 	walset -p $HOME/Pictures/wallpapers_new/wall.jpg -b colorthief
@@ -183,10 +190,16 @@ ctrl + super + alt + 7
 	walsetlight -p $HOME/Pictures/wallpapers_new/wall.jpg -b colorthief
 
 ctrl + alt + 8
-	walset -p $HOME/Pictures/wallpapers_new/foggy.jpg -b wal 
+	walset -p $HOME/Pictures/wallpapers_new/foggy.jpg -b wal
 
 ctrl + super + alt + 8
 	walsetlight -p $HOME/Pictures/wallpapers_new/foggy.jpg -b wal
+
+# ctrl + alt + 8
+	# walset -p $HOME/Pictures/70s/IMG_2219.JPG
+# 
+# ctrl + super + alt + 8
+	# walsetlight -p $HOME/Pictures/70s/IMG_2219.JPG
 
 ctrl + alt + 9
 	walset -p $HOME/Pictures/wallpapers_new/leaves.jpg -b wal
@@ -195,24 +208,76 @@ ctrl + super + alt + 9
 	walsetlight -p $HOME/Pictures/wallpapers_new/leaves.jpg -b wal
 
 ctrl + alt + 0
-	walset -p $HOME/Pictures/omori/pain.jpg -b colorthief
+	walset -p $HOME/Pictures/wallpapers_new/sealrock.jpg
 
 ctrl + super + alt + 0
+	walsetlight -p $HOME/Pictures/wallpapers_new/sealrock.jpg
+
+ctrl + alt + shift + 1
+	walset -p $HOME/Pictures/omori/pain.jpg -b colorthief
+
+ctrl + super + alt + shift + 1
 	walsetlight -p $HOME/Pictures/omori/pain.jpg -b colorthief
 
-ctrl + alt + minus
+ctrl + alt + shift + 2
 	walset -p $HOME/Pictures/omori/merch.jpg
 
-ctrl + super + alt + minus
+ctrl + super + alt + shift + 2
 	walsetlight -p $HOME/Pictures/omori/merch.jpg
 
-ctrl + alt + equal
+ctrl + alt + shift + 3
 	walset -p $HOME/Pictures/omori/cover.jpg -b wal
 
-ctrl + super + alt + equal
+ctrl + super + alt + shift + 3
 	walsetlight -p $HOME/Pictures/omori/cover.jpg -b wal
 
+ctrl + alt + shift + 4
+	walset -p $HOME/Pictures/omori/poster_light.png -b wal
+
+ctrl + super + alt + shift + 4
+	walsetlight -p $HOME/Pictures/omori/poster_light.png -b wal
+
+ctrl + alt + shift + 5
+	walset -p $HOME/Pictures/omori/hospital.png
+
+ctrl + super + alt + shift + 5
+	walsetlight -p $HOME/Pictures/omori/hospital.png
+
+ctrl + alt + shift + 6
+	walset -p $HOME/Pictures/omori/thankyou.png -b colorthief
+
+ctrl + super + alt + shift + 6
+	walsetlight -p $HOME/Pictures/omori/thankyou.png -b colorthief
+
+ctrl + alt + shift + 7
+	walset -p $HOME/Pictures/omori/basil_border.png -b wal
+
+ctrl + super + alt + shift + 7
+	walsetlight -p $HOME/Pictures/omori/basil_border.png -b wal
+
+ctrl + alt + shift + 8
+	walset -p $HOME/Pictures/omori/headspace.png -b haishoku
+	
+ctrl + super + alt + shift + 8
+	walsetlight -p $HOME/Pictures/omori/headspace.png -b haishoku
+
+ctrl + alt + shift + 9
+	walset -p $HOME/Pictures/ghibli/howl.jpg -b wal
+	
+ctrl + super + alt + shift + 9
+	walsetlight -p $HOME/Pictures/ghibli/howl.jpg -b wal
+
+ctrl + alt + shift + 0
+	walset -p $HOME/Pictures/ghibli/laputa.jpg -b colorthief
+	
+ctrl + super + alt + shift + 0
+	walsetlight -p $HOME/Pictures/ghibli/laputa.jpg -b colorthief
+
 ## -------- APPS ------ ##
+
+# Cawbird
+super + alt + w
+	cawbird
 
 # Typora
 super + alt + t
@@ -224,10 +289,11 @@ super + alt + v
 
 # Discord
 super + alt + d
-	discord-canary; killall -9 drpc; drpc
+	discord-canary
+	#; killall -9 discordrpcmaker-cli; discordrpcmaker-cli 498d3b599a
 
 ctrl + super + alt +d
-	killall -9 drpc; drpc; notify-send "Drpc started" 
+	killall -9 discordrpcmaker-cli; notify-send "Drpc started"; discordrpcmaker-cli 498d3b599a; 
 
 # Files
 super + alt + f
@@ -249,8 +315,12 @@ super + alt + m
 super + alt + p
 	pavucontrol
 
+# Plaza.one
+super + alt + a
+	surf https://plaza.one
+
 # Cava in kitty
-super + c
+super + alt + c
 	kitty -e cava
 
 # Zathura
@@ -258,7 +328,7 @@ super + alt + z
 	za
 
 # Farge
-super + alt + c
+ctrl + super + alt + c
 	farge --notify --expire-time 5000
 
 ##---------- EOF ----------##
