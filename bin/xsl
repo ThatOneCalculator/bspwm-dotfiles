@@ -1,8 +1,8 @@
 #!/bin/sh
 source $HOME/.cache/wal/colors.sh
-export XSECURELOCK_SAVER="$HOME/fehwall"
-export XSECURELOCK_DISCARD_FIRST_KEYPRESS=0
-export XSECURELOCK_FONT="FiraCode Nerd Font"
+export XSECURELOCK_SAVER="/bin/fehwall"
+export XSECURELOCK_DISCARD_FIRST_KEYPRESS=1
+export XSECURELOCK_FONT="Cozette"
 export XSECURELOCK_AUTH_BACKGROUND_COLOR="$background"
 export XSECURELOCK_PASSWORD_PROMPT="time_hex"
 export XSECURELOCK_DIM_FPS=144

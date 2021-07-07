@@ -1,0 +1,5 @@
+#!/bin/sh
+
+: ${XSECURELOCK_IMAGE_PATH:=$HOME/Pictures}
+
+/usr/bin/feh --auto-zoom --window-id="${XSCREENSAVER_WINDOW}" -F "${XSECURELOCK_IMAGE_PATH}"
