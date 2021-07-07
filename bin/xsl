@@ -1,7 +1,7 @@
 #!/bin/sh
 source $HOME/.cache/wal/colors.sh
 export XSECURELOCK_SAVER="/bin/fehwall"
-export XSECURELOCK_DISCARD_FIRST_KEYPRESS=1
+export XSECURELOCK_DISCARD_FIRST_KEYPRESS=0
 export XSECURELOCK_FONT="Cozette"
 export XSECURELOCK_AUTH_BACKGROUND_COLOR="$background"
 export XSECURELOCK_PASSWORD_PROMPT="time_hex"
@@ -11,4 +11,3 @@ export XSECURELOCK_IMAGE_PATH="$wallpaper"
 export XSECURELOCK_IMAGE_DURATION_SECONDS=30
 
 xsecurelock &
-sleep 1 && xset dpms force off

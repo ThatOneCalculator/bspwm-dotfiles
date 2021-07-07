@@ -1,8 +1,8 @@
 ##---------- Keybindings for bspwm ----------##
 
-# Terminal (kitty)
+# Terminal
 super + Return
-	kitty
+	alacritty
  
 ##---------- Rofi Launcher & Menus ----------##
 
@@ -51,7 +51,7 @@ super + shift + {minus,equal}
 
 # Lock
 ctrl + alt + l
-    xsl
+    xsl && sus
 
 # Lock
 ctrl + alt + s
@@ -309,7 +309,7 @@ super + alt + l
 
 # Micro 
 super + alt + m
-	kitty -e 'micro'
+	alacritty -e 'micro'
 
 # Pavucontrol
 super + alt + p
@@ -319,9 +319,13 @@ super + alt + p
 super + alt + a
 	surf https://plaza.one
 
-# Cava in kitty
+# Cava in alacritty
 super + alt + c
-	kitty -e cava
+	alacritty -e cava
+
+# Tuimoji in alacritty
+#bsuper + alt + e
+#	alacritty -e tuimoji
 
 # Zathura
 super + alt + z
