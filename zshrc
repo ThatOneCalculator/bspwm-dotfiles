@@ -140,8 +140,6 @@ alias yt="ytfzf"
 alias sp="ncspot"
 alias yf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias yq="yay -Qeq | fzf --multi --preview 'yay -Qi {1}' | xargs -ro yay -Rnscd"
-alias shut="sudo shutdown -h now"
-alias rb="sudo reboot"
 cat ~/.cache/wal/sequences
 f
 source /usr/share/nvm/init-nvm.sh
