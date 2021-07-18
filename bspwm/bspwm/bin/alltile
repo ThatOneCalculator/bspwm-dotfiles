@@ -1,6 +1,0 @@
-#!/bin/bash
-
-for node_id in $(bspc query -N -d); do
-	bspc node $node_id -t tiled
-done
- 

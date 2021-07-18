@@ -1,6 +1,0 @@
-#!/bin/bash
-
-bspc config -d $(bspc query --desktops -d) top_padding 0
-bspc config -d $(bspc query --desktops -d) bottom_padding 0
-bspc config -d $(bspc query --desktops -d) right_padding 0
-bspc config -d $(bspc query --desktops -d) left_padding 0

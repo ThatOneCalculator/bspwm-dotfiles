@@ -129,17 +129,17 @@ alias of="clear ; onefetch"
 alias ws="f; walset -p"
 alias cv="cava"
 alias cb="colorbars"
-alias u="yay -Syu; yay --clean"
+alias u="env _microarchitecture=14 yay -Syu; yay --clean"
 alias m="nvim"
 alias n="nvim"
 alias color="farge --notify --expire-time 5000"
 #alias yay="paru"
 #alias a="paru"
-alias e="tuimoji"
 alias yt="ytfzf"
 alias sp="ncspot"
 alias yf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias yq="yay -Qeq | fzf --multi --preview 'yay -Qi {1}' | xargs -ro yay -Rnscd"
 cat ~/.cache/wal/sequences
 f
+source /usr/share/zsh/plugins/emoji-cli/emoji-cli.zsh
 source /usr/share/nvm/init-nvm.sh
