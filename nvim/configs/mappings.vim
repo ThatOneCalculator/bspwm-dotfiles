@@ -222,4 +222,4 @@ map  <Leader><Leader>w <Plug>(easymotion-bd-w)
 map <Leader><Leader>w <Plug>(easymotion-overwin-w)
 
 " other shit
-nmap <Leader>f :NvimTreeToggle<CR>
+nmap <Leader>ff :NvimTreeToggle<CR>

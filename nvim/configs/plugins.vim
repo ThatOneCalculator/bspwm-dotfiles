@@ -103,7 +103,7 @@ Plug 'etdev/vim-hexcolor'
 
 " codi interactive scratchpad
 " Temporary repo, may be deprecated
-Plug 'ChristianChiarulli/codi.vim'
+" Plug 'ChristianChiarulli/codi.vim'
 
 " Easy tables in vim
 Plug 'dhruvasagar/vim-table-mode'
